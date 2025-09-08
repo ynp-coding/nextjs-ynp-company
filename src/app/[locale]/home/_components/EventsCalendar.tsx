@@ -1,68 +1,62 @@
 "use client";
 
-import { Button, Divider } from "@heroui/react";
-import { CalendarDays, ArrowRight } from "lucide-react";
+import { Button } from "@heroui/react";
+import { CalendarDays, ArrowRight, MapPin, Tag } from "lucide-react";
 import Link from "next/link";
 
 const events = [
   {
     id: 1,
     title: "การอบรมเชิงปฏิบัติการด้านดิจิทัล",
-    date: "12 กันยายน 2568",
+    date: "12 ก.ย. 2568",
     location: "ห้องประชุมใหญ่ กรมฯ",
     category: "อบรม",
+    href: "/events/1",
   },
   {
     id: 2,
     title: "ประชุมผู้บริหารประจำเดือน",
-    date: "15 กันยายน 2568",
+    date: "15 ก.ย. 2568",
     location: "ออนไลน์ (Zoom)",
     category: "ประชุม",
+    href: "/events/2",
   },
   {
     id: 3,
     title: "กิจกรรมวันสุขภาพดี",
-    date: "20 กันยายน 2568",
+    date: "20 ก.ย. 2568",
     location: "ลานกิจกรรม กรมฯ",
     category: "กิจกรรม",
+    href: "/events/3",
   },
   {
     id: 4,
     title: "ประกวดนวัตกรรมองค์กร",
-    date: "25 กันยายน 2568",
+    date: "25 ก.ย. 2568",
     location: "ห้องประชุม A-201",
     category: "ประกวด",
-  },
-  {
-    id: 5,
-    title: "แข่งขันกีฬาสี",
-    date: "25 กันยายน 2568",
-    location: "ห้องประชุม A-201",
-    category: "ประกวด",
-  },
-  {
-    id: 6,
-    title: "แข่งขันกีฬาสี",
-    date: "25 กันยายน 2568",
-    location: "ห้องประชุม A-201",
-    category: "ประกวด",
+    href: "/events/4",
   },
 ];
 
 export default function EventsCalendar() {
   return (
-    <section className="my-3 py-12">
-      {/* หัวข้อ */}
-      <div className="flex items-center justify-between mb-8">
+    <section className="my-6">
+      {/* Header */}
+      <div className="flex items-center justify-between mb-12 container mx-auto px-4">
         <div>
-          <h2 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
-            <CalendarDays className="w-6 h-6 text-primary" />
+          <h2 className="text-xl font-bold flex items-center gap-2">
+            <CalendarDays className="w-5 h-5 text-primary" />
             ปฏิทินกิจกรรม
           </h2>
-          <p className="text-gray-500 text-sm">ติดตามกิจกรรมวันนี้</p>
+          <p className="text-gray-500 text-sm">
+            ติดตามกิจกรรมที่กำลังจะเกิดขึ้น
+          </p>
         </div>
         <Button
-          endContent={<ArrowRight size={18} />}
+          as={Link}
+          href="/events"
+          endContent={<ArrowRight size={16} />}
           color="primary"
           variant="flat"
         >
@@ -70,24 +64,48 @@ export default function EventsCalendar() {
         </Button>
       </div>
 
-      {/* กริดกิจกรรม */}
-
-      <div className="grid grid-cols-1 gap-2">
+      {/* Event List */}
+      <ul className="container mx-auto px-2 divide-y divide-gray-200 bg-white rounded-xl shadow-sm">
         {events.map((event) => (
-          <Link
+          <li
             key={event.id}
-            href={event.location}
-            className="hover:shadow-lg py-2 px-2 rounded-lg"
+            className="flex flex-col sm:flex-row sm:justify-between py-3 px-4 hover:bg-gray-50 transition"
           >
-            <h5 className="text-sm font-medium line-clamp-2">{event.title}</h5>
-
-            <div className="text-sm text-gray-600 space-y-2">
-              <p className="text-gray-500">{event.location}</p>
-              <Divider />
+            <div>
+              <Link
+                href={event.href}
+                className="text-base font-medium text-gray-800 hover:text-primary"
+              >
+                {event.title}
+              </Link>
+              <div className="mt-2 flex flex-wrap items-center gap-3 text-sm text-gray-600">
+                <span className="flex items-center gap-1">
+                  <CalendarDays size={14} className="text-primary" />
+                  {event.date}
+                </span>
+                <span className="flex items-center gap-1">
+                  <MapPin size={14} className="text-green-600" />
+                  {event.location}
+                </span>
+                <span className="flex items-center gap-1">
+                  <Tag size={14} className="text-blue-600" />
+                  {event.category}
+                </span>
+              </div>
             </div>
-          </Link>
+            <Button
+              as={Link}
+              href={event.href}
+              size="sm"
+              color="primary"
+              variant="flat"
+              className="mt-2 sm:mt-0"
+            >
+              รายละเอียด
+            </Button>
+          </li>
         ))}
-      </div>
+      </ul>
     </section>
   );
 }
