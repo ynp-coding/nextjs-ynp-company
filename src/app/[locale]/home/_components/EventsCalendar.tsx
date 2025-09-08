@@ -37,13 +37,29 @@ const events = [
     category: "ประกวด",
     href: "/events/4",
   },
+  {
+    id: 5,
+    title: "แข่งขันกีฬาสี",
+    date: "28 ก.ย. 2568",
+    location: "สนามกีฬา กรมฯ",
+    category: "กีฬา",
+    href: "/events/5",
+  },
+  {
+    id: 6,
+    title: "สัมมนาวิชาการสาธารณสุข",
+    date: "30 ก.ย. 2568",
+    location: "ห้องประชุม B-101",
+    category: "สัมมนา",
+    href: "/events/6",
+  },
 ];
 
 export default function EventsCalendar() {
   return (
     <section className="my-6">
       {/* Header */}
-      <div className="flex items-center justify-between mb-12 container mx-auto px-4">
+      <div className="flex items-center justify-between mb-5 container mx-auto px-4">
         <div>
           <h2 className="text-xl font-bold flex items-center gap-2">
             <CalendarDays className="w-5 h-5 text-primary" />
@@ -69,7 +85,7 @@ export default function EventsCalendar() {
         {events.map((event) => (
           <li
             key={event.id}
-            className="flex flex-col sm:flex-row sm:justify-between py-3 px-4 hover:bg-gray-50 transition"
+            className="flex flex-col sm:flex-row sm:justify-between py-3 px-4 transition"
           >
             <div>
               <Link
