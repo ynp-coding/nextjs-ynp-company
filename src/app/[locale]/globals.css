@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@plugin './hero.ts';
+/* Note: You may need to change the path to fit your project structure */
+@source '../../../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}';
+@custom-variant dark (&:is(.dark *));
+
+h1 {
+  @apply text-2xl font-bold;
+}
+
+h2 {
+  @apply text-xl font-bold;
+}
+
+h3 {
+  @apply text-lg font-bold;
+}
+
+.ProseMirror-selectednode {
+  outline: 2px solid #3b82f6; /* เส้นขอบฟ้า */
+  outline-offset: 2px;
+  border-radius: 4px;
+}
