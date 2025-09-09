@@ -11,6 +11,7 @@ import {
   DropdownMenu,
   DropdownItem,
   Button,
+  NavbarItem,
 } from "@heroui/react";
 import {
   ChevronDown,
@@ -58,111 +59,96 @@ export default function Header() {
 
   return (
     <NavbarUI maxWidth="2xl" isBordered classNames={{ base: ["h-24"] }}>
-      <div className="w-full">
-        <div className="flex items-center justify-between">
-          <NavbarBrand
-            onClick={() => router.push("/home")}
-            className="cursor-pointer"
-          >
-            <Image
-              src={"/uploads/logo/logo.png"}
-              width={100}
-              height={100}
-              alt="Logo"
-              priority
-              className="rounded-full h-18 w-18 mr-2"
-            />
-            <div className="ml-2">
-              <p className="font-bold text-2xl">YNP Company</p>
-              <span className="text-sm text-gray-600">
-                Department of YNP Company
-              </span>
-            </div>
-          </NavbarBrand>
-
-          <NavbarContent justify="end">
-            <div className="flex flex-col gap-2">
-              <div className="flex items-center gap-3">
-                <div className="flex items-center gap-2">
-                  <Button
-                    size="sm"
-                    variant="light"
-                    isIconOnly
-                    aria-label="ลดขนาดตัวอักษร"
-                    onPress={() =>
-                      setFontSize((prev) => Math.max(14, prev - 2))
-                    }
-                    radius="full"
-                  >
-                    ก <Minus size={12} />
-                  </Button>
-                  <span className="text-sm font-medium">{fontSize}px</span>
-                  <Button
-                    size="sm"
-                    variant="light"
-                    isIconOnly
-                    aria-label="เพิ่มขนาดตัวอักษร"
-                    onPress={() =>
-                      setFontSize((prev) => Math.min(24, prev + 2))
-                    }
-                    radius="full"
-                  >
-                    ก <Plus size={12} />
-                  </Button>
-                </div>
-
-                <Dropdown>
-                  <DropdownTrigger>
-                    <Button
-                      size="sm"
-                      variant="light"
-                      startContent={<Globe size={16} />}
-                      endContent={<ChevronDown size={16} />}
-                      className="bg-transparent"
-                    >
-                      {language === "th" ? "ไทย" : "English"}
-                    </Button>
-                  </DropdownTrigger>
-                  <DropdownMenu
-                    aria-label="เลือกภาษา"
-                    onAction={(key) => setLanguage(key as "th" | "en")}
-                  >
-                    <DropdownItem key="th">ไทย</DropdownItem>
-                    <DropdownItem key="en">English</DropdownItem>
-                  </DropdownMenu>
-                </Dropdown>
-
-                <Button
-                  size="sm"
-                  variant="light"
-                  isIconOnly
-                  aria-label="site map"
-                  onPress={() => router.push("/site-map")}
-                >
-                  <Network size={16} />
-                </Button>
-              </div>
-
-              <div className="flex gap-2 justify-end">
-                {socialLinks.map(({ icon: Icon, label, href }) => (
-                  <Button
-                    key={label}
-                    as={Link}
-                    href={href}
-                    size="sm"
-                    variant="light"
-                    isIconOnly
-                    aria-label={`ลิงก์ ${label}`}
-                    radius="full"
-                  >
-                    <Icon size={16} />
-                  </Button>
-                ))}
-              </div>
-            </div>
-          </NavbarContent>
+      <NavbarBrand
+        onClick={() => router.push("/home")}
+        className="cursor-pointer"
+      >
+        <Image
+          src={"/uploads/logo/logo.png"}
+          width={100}
+          height={100}
+          alt="Logo"
+          priority
+          className="rounded-full h-10 w-10 sm:h-18 sm:w-18"
+        />
+        <div className="ml-2">
+          <p className="font-bold text-xs sm:text-2xl">YNP Company</p>
+          <span className="text-xs sm:text-xl">Department of YNP Company</span>
         </div>
-      </div>
+      </NavbarBrand>
+
+      <NavbarContent className="sm:flex" justify="end">
+        <NavbarItem>
+          <Button
+            size="sm"
+            variant="light"
+            isIconOnly
+            aria-label="ลดขนาดตัวอักษร"
+            onPress={() => setFontSize((prev) => Math.max(14, prev - 2))}
+            radius="full"
+          >
+            ก <Minus size={12} />
+          </Button>
+          <Button
+            size="sm"
+            variant="light"
+            isIconOnly
+            aria-label="เพิ่มขนาดตัวอักษร"
+            onPress={() => setFontSize((prev) => Math.min(24, prev + 2))}
+            radius="full"
+          >
+            ก <Plus size={12} />
+          </Button>
+
+          <Dropdown>
+            <DropdownTrigger>
+              <Button
+                size="sm"
+                variant="light"
+                startContent={<Globe size={16} />}
+                endContent={<ChevronDown size={16} />}
+                className="bg-transparent"
+              >
+                {language === "th" ? "ไทย" : "English"}
+              </Button>
+            </DropdownTrigger>
+            <DropdownMenu
+              aria-label="เลือกภาษา"
+              onAction={(key) => setLanguage(key as "th" | "en")}
+            >
+              <DropdownItem key="th">ไทย</DropdownItem>
+              <DropdownItem key="en">English</DropdownItem>
+            </DropdownMenu>
+          </Dropdown>
+
+          <Button
+            size="sm"
+            variant="light"
+            isIconOnly
+            aria-label="site map"
+            onPress={() => router.push("/site-map")}
+          >
+            <Network size={16} />
+          </Button>
+
+          <div className="flex gap-2 justify-end">
+            {socialLinks.map(({ icon: Icon, label, href }) => (
+              <Button
+                key={label}
+                as={Link}
+                href={href}
+                size="sm"
+                variant="light"
+                isIconOnly
+                aria-label={`ลิงก์ ${label}`}
+                radius="full"
+              >
+                <Icon size={16} />
+              </Button>
+            ))}
+          </div>
+        </NavbarItem>
+      </NavbarContent>
     </NavbarUI>
   );
 }
