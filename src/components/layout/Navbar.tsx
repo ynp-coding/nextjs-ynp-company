@@ -35,120 +35,116 @@ export default function Navbar() {
   const router = useRouter();
 
   return (
-    <NavbarUI maxWidth="2xl" isBordered>
-      <div className="w-full">
-        <div className="flex mt-1">
-          <NavbarContent>
-            <NavbarItem>
+    <NavbarUI maxWidth="xl" isBordered>
+      <NavbarContent className="hidden sm:flex">
+        <NavbarItem>
+          <Button
+            disableRipple
+            variant="light"
+            onPress={() => router.push("/home")}
+          >
+            หน้าหลัก
+          </Button>
+        </NavbarItem>
+
+        <NavbarItem>
+          <Dropdown>
+            <DropdownTrigger>
               <Button
                 disableRipple
                 variant="light"
-                onPress={() => router.push("/home")}
+                endContent={<ChevronDown size={16} />}
               >
-                หน้าหลัก
+                เกี่ยวกับ
               </Button>
-            </NavbarItem>
+            </DropdownTrigger>
+            <DropdownMenu aria-label="เมนูเกี่ยวกับองค์กร" items={aboutUs}>
+              {(item) => (
+                <DropdownItem
+                  key={`about-${item.id}`}
+                  onPress={() => router.push(item.href)}
+                >
+                  {item.label}
+                </DropdownItem>
+              )}
+            </DropdownMenu>
+          </Dropdown>
+        </NavbarItem>
 
-            <NavbarItem>
-              <Dropdown>
-                <DropdownTrigger>
-                  <Button
-                    disableRipple
-                    variant="light"
-                    endContent={<ChevronDown size={16} />}
-                  >
-                    เกี่ยวกับ
-                  </Button>
-                </DropdownTrigger>
-                <DropdownMenu aria-label="เมนูเกี่ยวกับองค์กร" items={aboutUs}>
-                  {(item) => (
-                    <DropdownItem
-                      key={`about-${item.id}`}
-                      onPress={() => router.push(item.href)}
-                    >
-                      {item.label}
-                    </DropdownItem>
-                  )}
-                </DropdownMenu>
-              </Dropdown>
-            </NavbarItem>
-
-            <NavbarItem>
-              <Dropdown>
-                <DropdownTrigger>
-                  <Button
-                    disableRipple
-                    variant="light"
-                    endContent={<ChevronDown size={16} />}
-                  >
-                    ข่าวสาร
-                  </Button>
-                </DropdownTrigger>
-                <DropdownMenu aria-label="ข่าวสาร" items={news}>
-                  {(item) => (
-                    <DropdownItem
-                      key={`about-${item.id}`}
-                      onPress={() => router.push(item.href)}
-                    >
-                      {item.label}
-                    </DropdownItem>
-                  )}
-                </DropdownMenu>
-              </Dropdown>
-            </NavbarItem>
-
-            <NavbarItem>
-              <Dropdown>
-                <DropdownTrigger>
-                  <Button
-                    disableRipple
-                    variant="light"
-                    endContent={<ChevronDown size={16} />}
-                  >
-                    บริการประชาชน
-                  </Button>
-                </DropdownTrigger>
-                <DropdownMenu aria-label="บริการเมนู" items={services}>
-                  {(item) => (
-                    <DropdownItem
-                      key={`service-${item.id}`}
-                      onPress={() => router.push(item.href)}
-                    >
-                      {item.label}
-                    </DropdownItem>
-                  )}
-                </DropdownMenu>
-              </Dropdown>
-            </NavbarItem>
-
-            <NavbarItem>
+        <NavbarItem>
+          <Dropdown>
+            <DropdownTrigger>
               <Button
                 disableRipple
                 variant="light"
-                onPress={() => router.push("/contact")}
+                endContent={<ChevronDown size={16} />}
               >
-                ติดต่อ
+                ข่าวสาร
               </Button>
-            </NavbarItem>
-          </NavbarContent>
+            </DropdownTrigger>
+            <DropdownMenu aria-label="ข่าวสาร" items={news}>
+              {(item) => (
+                <DropdownItem
+                  key={`about-${item.id}`}
+                  onPress={() => router.push(item.href)}
+                >
+                  {item.label}
+                </DropdownItem>
+              )}
+            </DropdownMenu>
+          </Dropdown>
+        </NavbarItem>
 
-          <NavbarContent justify="end">
-            <NavbarItem>
-              <Input
-                startContent={<SearchIcon size={16} />}
-                isClearable
-                className="w-full"
-                classNames={{
-                  input: "w-full",
-                  mainWrapper: "w-full",
-                }}
-                placeholder="ค้นหา..."
-                aria-label="ค้นหา"
-              />
-            </NavbarItem>
-          </NavbarContent>
-        </div>
-      </div>
+        <NavbarItem>
+          <Dropdown>
+            <DropdownTrigger>
+              <Button
+                disableRipple
+                variant="light"
+                endContent={<ChevronDown size={16} />}
+              >
+                บริการประชาชน
+              </Button>
+            </DropdownTrigger>
+            <DropdownMenu aria-label="บริการเมนู" items={services}>
+              {(item) => (
+                <DropdownItem
+                  key={`service-${item.id}`}
+                  onPress={() => router.push(item.href)}
+                >
+                  {item.label}
+                </DropdownItem>
+              )}
+            </DropdownMenu>
+          </Dropdown>
+        </NavbarItem>
+
+        <NavbarItem>
+          <Button
+            disableRipple
+            variant="light"
+            onPress={() => router.push("/contact")}
+          >
+            ติดต่อ
+          </Button>
+        </NavbarItem>
+      </NavbarContent>
+
+      <NavbarContent className="hidden sm:flex" justify="end">
+        <NavbarItem>
+          <Input
+            startContent={<SearchIcon size={16} />}
+            isClearable
+            className="w-full"
+            classNames={{
+              input: "w-full",
+              mainWrapper: "w-full",
+            }}
+            placeholder="ค้นหา..."
+            aria-label="ค้นหา"
+          />
+        </NavbarItem>
+      </NavbarContent>
     </NavbarUI>
   );
 }
