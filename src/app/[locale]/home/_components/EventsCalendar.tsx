@@ -81,11 +81,11 @@ export default function EventsCalendar() {
       </div>
 
       {/* Event List */}
-      <ul className="container mx-auto px-2 divide-y divide-gray-200 bg-white rounded-xl shadow-sm">
+      <ul className="divide-y divide-gray-200 bg-white rounded-xl shadow-sm">
         {events.map((event) => (
           <li
             key={event.id}
-            className="flex flex-col sm:flex-row sm:justify-between py-3 px-4 transition"
+            className="flex flex-row justify-between py-3 px-4 transition"
           >
             <div>
               <Link
@@ -94,7 +94,7 @@ export default function EventsCalendar() {
               >
                 {event.title}
               </Link>
-              <div className="mt-2 flex flex-wrap items-center gap-3 text-sm text-gray-600">
+              <div className="mt-2 flex flex-wrap items-center gap-3 text-xs text-gray-600">
                 <span className="flex items-center gap-1">
                   <CalendarDays size={14} className="text-primary" />
                   {event.date}
@@ -109,16 +109,6 @@ export default function EventsCalendar() {
                 </span>
               </div>
             </div>
-            <Button
-              as={Link}
-              href={event.href}
-              size="sm"
-              color="primary"
-              variant="flat"
-              className="mt-2 sm:mt-0"
-            >
-              รายละเอียด
-            </Button>
           </li>
         ))}
       </ul>
