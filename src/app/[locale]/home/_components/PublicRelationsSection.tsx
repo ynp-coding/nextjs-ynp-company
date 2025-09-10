@@ -1,6 +1,6 @@
 "use client";
 
-import { CalendarDays, ArrowRight } from "lucide-react";
+import { ArrowRight, Megaphone } from "lucide-react";
 import { Button } from "@heroui/react";
 import NewsList from "@/components/ui/news-list";
 
@@ -81,7 +81,7 @@ export default function PublicRelationsSection() {
         <div className="flex items-center justify-between mb-8">
           <div>
             <h2 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
-              <CalendarDays className="w-6 h-6 text-primary" />
+              <Megaphone className="w-6 h-6 text-primary" />
               ข่าวประชาสัมพันธ์
             </h2>
             <p className="text-gray-500 text-sm">

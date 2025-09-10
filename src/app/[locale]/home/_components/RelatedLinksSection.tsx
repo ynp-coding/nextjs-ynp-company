@@ -2,7 +2,7 @@
 
 import { Card, CardBody } from "@heroui/react";
 import Link from "next/link";
-import { Globe, Building2, BarChart3, Users, CalendarDays } from "lucide-react";
+import { Globe, Building2, BarChart3, Users } from "lucide-react";
 
 type RelatedLink = {
   name: string;
@@ -45,7 +45,7 @@ export default function RelatedLinksQuickAccess() {
         <div className="flex items-center justify-between mb-8">
           <div>
             <h2 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
-              <CalendarDays className="w-6 h-6 text-primary" />
+              <Building2 className="w-6 h-6 text-primary" />
               หน่วยงานที่เกี่ยวข้อง
             </h2>
           </div>
