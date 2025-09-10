@@ -73,7 +73,7 @@ export default function Header() {
         />
         <div className="ml-2">
           <p className="font-bold text-xs sm:text-2xl">YNP Company</p>
-          <span className="text-xs sm:text-xl">Department of YNP Company</span>
+          <span className="text-xs sm:text-lg">Department of YNP Company</span>
         </div>
       </NavbarBrand>
 
