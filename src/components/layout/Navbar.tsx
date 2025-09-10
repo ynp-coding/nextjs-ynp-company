@@ -31,6 +31,7 @@ const news = [
   { id: 1, label: "ข่าวผู้บริหาร", href: "/news/executive" },
   { id: 1, label: "ประชาสัมพันธ์", href: "/news/public-relations" },
 ];
+
 export default function Navbar() {
   const router = useRouter();
 
