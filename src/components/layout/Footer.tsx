@@ -22,6 +22,17 @@ const aboutUs = [
   },
 ];
 
+const news = [
+  {
+    title: "ข่าวผู้บริหาร",
+    href: "/news/executive",
+  },
+  {
+    title: "ประชาสัมพันธ์",
+    href: "/news/public-relations",
+  },
+];
+
 const services = [
   {
     title: "ข้อมูลการบริการ",
@@ -84,6 +95,20 @@ export default function Footer() {
               </Link>
             ))}
           </div>
+
+          <div className="flex flex-col gap-y-2">
+            <h3>ข่าวสาร</h3>
+            {news.map((news, index) => (
+              <Link
+                key={`service-${index}`}
+                href={news.href}
+                className="hover:underline"
+              >
+                {news.title}
+              </Link>
+            ))}
+          </div>
+
           <div className="flex flex-col gap-y-2">
             <h3>บริการประชาชน</h3>
             {services.map((service, index) => (
@@ -98,14 +123,8 @@ export default function Footer() {
           </div>
 
           <div className="flex flex-col gap-y-2">
-            <h3>ถาม & ตอบ</h3>
-          </div>
-
-          <div className="flex flex-col gap-y-2">
             <h3>YNP Company</h3>
-            <p>
-              90 ซอยพหลโยธิน 7 ถนนพหลโยธิน แขวงพญาไท เขตพญาไท กรุงเทพฯ 10400
-            </p>
+            <p>ถนนติวานนท์ ปากเกร็ด นนทบุรี 11120</p>
             <div className="flex flex-row gap-2 py-2">
               {socials.map((social, index) =>
                 social.href ? (
