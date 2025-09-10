@@ -35,7 +35,7 @@ export default function Navbar() {
   const router = useRouter();
 
   return (
-    <NavbarUI maxWidth="xl" isBordered>
+    <NavbarUI maxWidth="2xl" isBordered>
       <NavbarContent className="hidden sm:flex">
         <NavbarItem>
           <Button
