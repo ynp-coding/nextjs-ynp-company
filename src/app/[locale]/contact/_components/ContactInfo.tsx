@@ -9,23 +9,23 @@ export default function ContactInfo() {
 
       <div className="flex items-center space-x-4">
         <Phone className="w-7 h-7" />
-        <span className="text-lg">โทร: 02-123-4567</span>
+        <span className="text-lg">ID: @341eoawp</span>
       </div>
 
       <div className="flex items-center space-x-4">
         <Mail className="w-7 h-7" />
-        <span className="text-lg">อีเมล: info@example.com</span>
+        <span className="text-lg">อีเมล: onlinepon.dev@gmail.com</span>
       </div>
 
       <div className="flex items-center space-x-4">
         <MapPin className="w-7 h-7" />
-        <span className="text-lg">123 ถนนหลัก เขตบางรัก กรุงเทพฯ</span>
+        <span className="text-lg">ถนนติวานนท์ ปากเกร็ด นนทบุรี 11120</span>
       </div>
 
       <div className="flex items-center space-x-4">
         <Clock className="w-7 h-7" />
         <span className="text-lg">
-          เวลาทำการ: จันทร์ - ศุกร์ 8:30 - 16:30 น.
+          เวลาทำการ: เสาร์ - อาทิตย์ 8:30 - 16:30 น.
         </span>
       </div>
     </div>
