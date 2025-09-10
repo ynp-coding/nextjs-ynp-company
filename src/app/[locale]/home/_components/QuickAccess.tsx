@@ -53,8 +53,8 @@ const quickAccessItems: QuickAccessItem[] = [
 export default function QuickAccess() {
   return (
     <section className="py-12">
-      <div className="container mx-auto">
-        <div className="grid grid-cols-5 gap-8">
+      <div className="container mx-auto px-4 sm:px-0 md:px-0">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8">
           {quickAccessItems.map((item) => (
             <Link key={item.title} href={item.href} className="h-full">
               <Card
