@@ -1,68 +1,82 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import {
-  Card,
-  CardBody,
-  CardHeader,
-  Input,
-  Button,
-  Pagination,
-} from "@heroui/react";
-import { CalendarDays, Eye, Search } from "lucide-react";
-import Link from "next/link";
+import { Input, Button, Pagination } from "@heroui/react";
+import { Search } from "lucide-react";
+
+import NewsList from "@/components/ui/news-list";
 
 type NewsItem = {
   id: number;
   title: string;
   date: string;
-  publishDate: string;
-  description: string;
   views: number;
-  documentUrl?: string;
-  url?: string; // สำหรับลิงก์ "อ่านเพิ่มเติม"
+  href: string;
 };
 
 const newsData: NewsItem[] = [
   {
     id: 1,
-    title: "การอบรมเชิงปฏิบัติการประจำปี 2568",
-    date: "6 กันยายน 2568",
-    publishDate: "1 กันยายน 2568",
-    description:
-      "เชิญชวนเข้าร่วมการอบรมเชิงปฏิบัติการด้านนวัตกรรมและเทคโนโลยี ณ ศูนย์ประชุมแห่งชาติสิริกิติ์",
-    views: 120,
-    documentUrl: "/docs/workshop-2568.pdf",
-    url: "/news/1",
+    title: "กรมสาธารณสุขจัดอบรมเชิงปฏิบัติการด้านสุขภาพชุมชน",
+    date: "7 กันยายน 2568",
+    views: 1234,
+    href: "/pr/news/1",
   },
   {
     id: 2,
-    title: "ประกาศปิดทำการชั่วคราว",
-    date: "1 กันยายน 2568",
-    publishDate: "25 สิงหาคม 2568",
-    description:
-      "สำนักงานจะปิดทำการในวันที่ 5 กันยายน 2568 เพื่อปรับปรุงระบบไฟฟ้า",
-    views: 85,
-    documentUrl: "/docs/close-announce.pdf",
-    url: "/news/2",
+    title: "เปิดรับสมัครอบรมออนไลน์ด้านโภชนาการ",
+    date: "6 กันยายน 2568",
+    views: 980,
+    href: "/pr/news/2",
   },
   {
     id: 3,
-    title: "กิจกรรมวันเด็กแห่งชาติ",
-    date: "10 มกราคม 2568",
-    publishDate: "20 ธันวาคม 2567",
-    description:
-      "ขอเชิญผู้ปกครองนำบุตรหลานเข้าร่วมงานวันเด็กแห่งชาติ ณ ลานกิจกรรมสวนสาธารณะกลางเมือง",
-    views: 240,
-    documentUrl: "/docs/child-day.pdf",
-    url: "/news/3",
+    title: "การรณรงค์ป้องกันโรคไข้เลือดออก",
+    date: "4 กันยายน 2568",
+    views: 754,
+    href: "/pr/news/3",
+  },
+  {
+    id: 4,
+    title: "ประชุมวิชาการสาธารณสุขแห่งชาติ",
+    date: "2 กันยายน 2568",
+    views: 652,
+    href: "/pr/news/4",
+  },
+  {
+    id: 5,
+    title: "เปิดตัวโครงการสุขภาพดีถ้วนหน้า",
+    date: "1 กันยายน 2568",
+    views: 511,
+    href: "/pr/news/5",
+  },
+  {
+    id: 6,
+    title: "รณรงค์ออกกำลังกายเพื่อสุขภาพ",
+    date: "30 สิงหาคม 2568",
+    views: 432,
+    href: "/pr/news/6",
+  },
+  {
+    id: 7,
+    title: "เปิดคลินิกชุมชนอบอุ่นแห่งใหม่",
+    date: "29 สิงหาคม 2568",
+    views: 389,
+    href: "/pr/news/7",
+  },
+  {
+    id: 8,
+    title: "ประกาศนโยบายอาหารปลอดภัย",
+    date: "28 สิงหาคม 2568",
+    views: 310,
+    href: "/pr/news/8",
   },
 ];
 
 export default function PublicizeList() {
   const [filterValue, setFilterValue] = useState("");
   const [page, setPage] = useState(1);
-  const rowsPerPage = 2;
+  const rowsPerPage = 6;
 
   const filteredItems = useMemo(() => {
     return newsData.filter((item) =>
@@ -101,41 +115,7 @@ export default function PublicizeList() {
       </div>
 
       {/* List */}
-      {items.map((item) => (
-        <Card
-          key={item.id}
-          shadow="sm"
-          radius="lg"
-          className="hover:shadow-lg transition"
-        >
-          <CardHeader className="flex flex-col items-start">
-            <h2 className="text-xl font-semibold mb-3">{item.title}</h2>
-            <div className="flex items-center text-sm text-gray-500 gap-2">
-              <CalendarDays size={14} />
-              <span>วันที่เผยแพร่: {item.publishDate}</span>
-            </div>
-          </CardHeader>
-
-          <CardBody className="space-y-3">
-            <p className="text-gray-700">{item.description}</p>
-
-            <div className="flex items-center justify-between text-sm text-gray-500">
-              <div className="flex items-center space-x-1">
-                <Eye className="w-4 h-4" />
-                <span>{item.views} ครั้ง</span>
-              </div>
-
-              {item.documentUrl && (
-                <Link href={item.documentUrl} passHref>
-                  <Button size="sm" color="primary" variant="flat">
-                    อ่านเพิ่มเติม
-                  </Button>
-                </Link>
-              )}
-            </div>
-          </CardBody>
-        </Card>
-      ))}
+      <NewsList items={items} />
 
       {/* Footer Pagination */}
       <div className="py-2 px-2 flex justify-between items-center">
