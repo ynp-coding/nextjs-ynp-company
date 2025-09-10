@@ -17,6 +17,18 @@ h3 {
   @apply text-lg font-bold;
 }
 
+h4 {
+  @apply text-medium font-bold;
+}
+
+h5 {
+  @apply text-sm font-bold;
+}
+
+.text-xs {
+  @apply text-gray-500;
+}
+
 .ProseMirror-selectednode {
   outline: 2px solid #3b82f6; /* เส้นขอบฟ้า */
   outline-offset: 2px;
