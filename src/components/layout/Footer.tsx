@@ -81,7 +81,7 @@ const socials = [
 export default function Footer() {
   return (
     <footer className="mt-12">
-      <section className="container mx-auto">
+      <section className="container mx-auto px-8 sm:px-0 md:px-0 lg:px-0">
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
           <div className="flex flex-col gap-y-2">
             <h3>เกี่ยวกับ</h3>
