@@ -80,9 +80,9 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="mt-12">
+    <div>
       <section className="container mx-auto">
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
           <div className="flex flex-col gap-y-2">
             <h3>เกี่ยวกับ</h3>
             {aboutUs.map((about, index) => (
@@ -175,6 +175,6 @@ export default function Footer() {
           </div>
         </div>
       </section>
-    </footer>
+    </div>
   );
 }
