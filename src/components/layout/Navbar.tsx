@@ -17,20 +17,20 @@ import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 
 const aboutUs = [
-  { id: 1, label: "ประวัติความเป็นมา", href: "/history" },
-  { id: 2, label: "วิสัยทัศน์ พันธกิจ", href: "/vision-mission" },
-  { id: 3, label: "ผู้บริหาร", href: "/executive" },
-  { id: 4, label: "โครงสร้างหน่วยงาน", href: "/structure" },
+  { id: "about-1", href: "/history" },
+  { id: "about-2", href: "/vision-mission" },
+  { id: "about-3", href: "/executive" },
+  { id: "about-4", href: "/structure" },
 ];
 
 const services = [
-  { id: 1, label: "ข้อมูลการบริการ", href: "/information" },
-  { id: 2, label: "ร้องเรียน ร้องทุกข์", href: "/complain" },
+  { id: "service-1", href: "/information" },
+  { id: "service-2", href: "/complain" },
 ];
 
 const news = [
-  { id: 1, label: "ข่าวผู้บริหาร", href: "/news/executive" },
-  { id: 2, label: "ประชาสัมพันธ์", href: "/news/public-relations" },
+  { id: "news-1", href: "/news/executive" },
+  { id: "news-2", href: "/news/public-relations" },
 ];
 
 export default function Navbar() {
@@ -58,16 +58,16 @@ export default function Navbar() {
                 variant="light"
                 endContent={<ChevronDown size={16} />}
               >
-                {t("navbar.about")}
+                {t("navbar.about.label")}
               </Button>
             </DropdownTrigger>
             <DropdownMenu aria-label="เมนูเกี่ยวกับองค์กร" items={aboutUs}>
               {(item) => (
                 <DropdownItem
-                  key={`about${item.id}`}
+                  key={`${item.id}`}
                   onPress={() => router.push(item.href)}
                 >
-                  {item.label}
+                  {t(`navbar.about.links.${item.id}`)}
                 </DropdownItem>
               )}
             </DropdownMenu>
@@ -82,16 +82,16 @@ export default function Navbar() {
                 variant="light"
                 endContent={<ChevronDown size={16} />}
               >
-                {t("navbar.news")}
+                {t("navbar.news.label")}
               </Button>
             </DropdownTrigger>
             <DropdownMenu aria-label="ข่าวสาร" items={news}>
               {(item) => (
                 <DropdownItem
-                  key={`news${item.id}`}
+                  key={`${item.id}`}
                   onPress={() => router.push(item.href)}
                 >
-                  {item.label}
+                  {t(`navbar.news.links.${item.id}`)}
                 </DropdownItem>
               )}
             </DropdownMenu>
@@ -106,16 +106,16 @@ export default function Navbar() {
                 variant="light"
                 endContent={<ChevronDown size={16} />}
               >
-                {t("navbar.services")}
+                {t("navbar.services.label")}
               </Button>
             </DropdownTrigger>
             <DropdownMenu aria-label="บริการเมนู" items={services}>
               {(item) => (
                 <DropdownItem
-                  key={`services${item.id}`}
+                  key={`${item.id}`}
                   onPress={() => router.push(item.href)}
                 >
-                  {item.label}
+                  {t(`navbar.services.links.${item.id}`)}
                 </DropdownItem>
               )}
             </DropdownMenu>

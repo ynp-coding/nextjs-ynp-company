@@ -3,7 +3,7 @@
     "language": "Language",
     "thai": "Thai",
     "english": "English",
-    "welcome": "Welcome to our corporate website",
+    "welcome": "Welcome to our organization website",
     "readMore": "Read More",
     "learnMore": "Learn More",
     "back": "Back",
@@ -15,10 +15,29 @@
   },
   "navbar": {
     "home": "Home",
-    "about": "About Us",
-    "services": "Services",
-    "news": "News",
-    "team": "Team",
-    "contact": "Contact"
+    "about": {
+      "label": "About Us",
+      "links": {
+        "about-1": "Our History",
+        "about-2": "Vision & Mission",
+        "about-3": "Executives",
+        "about-4": "Organizational Structure"
+      }
+    },
+    "news": {
+      "label": "News",
+      "links": {
+        "news-1": "Executive News",
+        "news-2": "Announcements"
+      }
+    },
+    "services": {
+      "label": "Services",
+      "links": {
+        "service-1": "Service Information",
+        "service-2": "Complaints & Grievances"
+      }
+    },
+    "contact": "Contact Us"
   }
 }
