@@ -16,7 +16,7 @@ type ExecutiveNews = {
   views: number;
 };
 
-export default function ExecutivesNewsSection() {
+export default function ExecutivesNews() {
   const newsList: ExecutiveNews[] = [
     {
       id: 1,
