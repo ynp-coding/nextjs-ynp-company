@@ -139,8 +139,8 @@ export default function Navbar() {
               input: "w-full",
               mainWrapper: "w-full",
             }}
-            placeholder="ค้นหา..."
-            aria-label="ค้นหา"
+            placeholder={t("common.search")}
+            aria-label={t("common.search")}
           />
         </NavbarItem>
       </NavbarContent>
