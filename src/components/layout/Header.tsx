@@ -26,12 +26,14 @@ import {
 } from "lucide-react";
 
 import { useRouter, usePathname } from "@/i18n/navigation";
+import { useLocale } from "next-intl";
 
 import Image from "next/image";
 
 export default function Header() {
   const router = useRouter();
   const pathname = usePathname();
+  const currentLocale = useLocale();
 
   // Font size state
   const [fontSize, setFontSize] = useState(16);
@@ -40,7 +42,9 @@ export default function Header() {
   }, [fontSize]);
 
   // Language state
-  const [language, setLanguage] = useState<"th" | "en">("th");
+  const [language, setLanguage] = useState<"th" | "en">(
+    (currentLocale as "th" | "en") || "th"
+  );
 
   const changeLocale = (key: string) => {
     setLanguage(key as "th" | "en");
