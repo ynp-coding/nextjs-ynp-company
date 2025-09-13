@@ -22,32 +22,32 @@ type CarouselProps = {
 
 export default function Carousel({ items }: CarouselProps) {
   return (
-    <div className="w-full">
-      <Swiper
-        spaceBetween={30}
-        slidesPerView={1}
-        loop={true}
-        effect={"fade"}
-        navigation={true}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[EffectFade, Navigation, Pagination]}
-      >
-        {items.map((item, index) => (
-          <SwiperSlide key={index}>
-            <a href={item.href} target="_blank" rel="noopener noreferrer">
+    <Swiper
+      spaceBetween={30}
+      slidesPerView={1}
+      loop={true}
+      effect={"fade"}
+      navigation={true}
+      pagination={{
+        clickable: true,
+      }}
+      modules={[EffectFade, Navigation, Pagination]}
+    >
+      {items.map((item, index) => (
+        <SwiperSlide key={index}>
+          <a href={item.href} target="_blank" rel="noopener noreferrer">
+            <div className="relative w-full h-[500px]">
               <Image
                 src={item.src}
                 alt={`Banner ${item.alt}`}
-                width={1200}
-                height={500}
-                className="w-full h-[500px] object-cover"
+                fill
+                style={{ objectFit: "cover" }}
+                priority
               />
-            </a>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </div>
+            </div>
+          </a>
+        </SwiperSlide>
+      ))}
+    </Swiper>
   );
 }

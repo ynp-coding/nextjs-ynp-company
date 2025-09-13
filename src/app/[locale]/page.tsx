@@ -31,8 +31,8 @@ export default function Welcome() {
           src={
             "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80"
           }
-          width={1000}
-          height={1000}
+          width={650}
+          height={100}
           className="w-full max-h-[650px]"
           priority
           alt="welcome banner"

@@ -74,29 +74,39 @@
   },
   "quickAccess": [
     {
-      "id": "1",
+      "id": "quick-access-1",
       "label": "ตรวจสอบข้อมูล",
-      "href": "#"
+      "href": "#",
+      "icon": "Search",
+      "color": "bg-blue-100 text-blue-600"
     },
     {
-      "id": "2",
+      "id": "quick-access-2",
       "label": "ดาวน์โหลดเอกสาร",
-      "href": "#"
+      "href": "#",
+      "icon": "Download",
+      "color": "bg-blue-100 text-blue-600"
     },
     {
-      "id": "3",
+      "id": "quick-access-3",
       "label": "จองคิวออนไลน์",
-      "href": "#"
+      "href": "#",
+      "icon": "CalendarClock",
+      "color": "bg-blue-100 text-blue-600"
     },
     {
-      "id": "4",
+      "id": "quick-access-4",
       "label": "ระบบร้องเรียน/แจ้งเรื่อง",
-      "href": "#"
+      "href": "#",
+      "icon": "Megaphone",
+      "color": "bg-blue-100 text-blue-600"
     },
     {
-      "id": "5",
+      "id": "quick-access-5",
       "label": "ศูนย์ข้อมูลสถิติ",
-      "href": "#"
+      "href": "#",
+      "icon": "BarChart3",
+      "color": "bg-blue-100 text-blue-600"
     }
   ]
 }
