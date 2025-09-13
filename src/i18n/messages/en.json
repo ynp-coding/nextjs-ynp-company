@@ -1,6 +1,24 @@
 {
-  "HomePage": {
-    "title": "Hello world!",
-    "about": "Go to the about page"
+  "common": {
+    "language": "Language",
+    "thai": "Thai",
+    "english": "English",
+    "welcome": "Welcome to our corporate website",
+    "readMore": "Read More",
+    "learnMore": "Learn More",
+    "back": "Back",
+    "next": "Next",
+    "search": "Search",
+    "save": "Save",
+    "cancel": "Cancel",
+    "submit": "Submit"
+  },
+  "navbar": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Services",
+    "news": "News",
+    "team": "Team",
+    "contact": "Contact"
   }
 }

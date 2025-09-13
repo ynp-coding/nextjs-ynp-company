@@ -14,6 +14,7 @@ import {
 
 import { ChevronDown, SearchIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 const aboutUs = [
   { id: 1, label: "ประวัติความเป็นมา", href: "/history" },
@@ -34,6 +35,7 @@ const news = [
 
 export default function Navbar() {
   const router = useRouter();
+  const t = useTranslations();
 
   return (
     <NavbarUI maxWidth="2xl" isBordered>
@@ -44,7 +46,7 @@ export default function Navbar() {
             variant="light"
             onPress={() => router.push("/home")}
           >
-            หน้าหลัก
+            {t("navbar.home")}
           </Button>
         </NavbarItem>
 
@@ -56,7 +58,7 @@ export default function Navbar() {
                 variant="light"
                 endContent={<ChevronDown size={16} />}
               >
-                เกี่ยวกับ
+                {t("navbar.about")}
               </Button>
             </DropdownTrigger>
             <DropdownMenu aria-label="เมนูเกี่ยวกับองค์กร" items={aboutUs}>
@@ -80,7 +82,7 @@ export default function Navbar() {
                 variant="light"
                 endContent={<ChevronDown size={16} />}
               >
-                ข่าวสาร
+                {t("navbar.news")}
               </Button>
             </DropdownTrigger>
             <DropdownMenu aria-label="ข่าวสาร" items={news}>
@@ -104,7 +106,7 @@ export default function Navbar() {
                 variant="light"
                 endContent={<ChevronDown size={16} />}
               >
-                บริการประชาชน
+                {t("navbar.services")}
               </Button>
             </DropdownTrigger>
             <DropdownMenu aria-label="บริการเมนู" items={services}>
@@ -126,7 +128,7 @@ export default function Navbar() {
             variant="light"
             onPress={() => router.push("/contact")}
           >
-            ติดต่อ
+            {t("navbar.contact")}
           </Button>
         </NavbarItem>
       </NavbarContent>

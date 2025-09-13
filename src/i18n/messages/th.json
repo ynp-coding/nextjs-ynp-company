@@ -1,6 +1,23 @@
 {
-  "HomePage": {
-    "title": "Hello world!",
-    "about": "Go to the about page"
+  "common": {
+    "language": "ภาษา",
+    "thai": "ไทย",
+    "english": "อังกฤษ",
+    "welcome": "ยินดีต้อนรับเข้าสู่เว็บไซต์องค์กรของเรา",
+    "readMore": "อ่านเพิ่มเติม",
+    "learnMore": "เรียนรู้เพิ่มเติม",
+    "back": "ย้อนกลับ",
+    "next": "ถัดไป",
+    "search": "ค้นหา",
+    "save": "บันทึก",
+    "cancel": "ยกเลิก",
+    "submit": "ส่งข้อมูล"
+  },
+  "navbar": {
+    "home": "หน้าแรก",
+    "about": "เกี่ยวกับเรา",
+    "services": "บริการ",
+    "news": "ข่าวสาร",
+    "contact": "ติดต่อเรา"
   }
 }
