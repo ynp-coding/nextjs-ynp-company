@@ -157,7 +157,7 @@ export default function Footer() {
           </div>
         </div>
       </section>
-      <section className="container mx-auto">
+      <section className="container mx-auto px-8 sm:px-0 md:px-0 lg:px-0">
         <Divider className="mt-6" />
         <div className="py-6 flex justify-between">
           <small>Copyright &copy; 2025 YNP Coding. All rights reserved.</small>
