@@ -56,7 +56,11 @@ export default function Header() {
   ];
 
   return (
-    <NavbarUI maxWidth="2xl" isBordered classNames={{ base: ["h-24"] }}>
+    <NavbarUI
+      maxWidth="2xl"
+      isBordered
+      classNames={{ base: ["h-24"], content: "gap-2" }}
+    >
       <NavbarBrand
         onClick={() => router.push("/home")}
         className="cursor-pointer"
@@ -75,8 +79,9 @@ export default function Header() {
         </div>
       </NavbarBrand>
 
-      <NavbarContent className="sm:flex" justify="end">
-        <NavbarItem>
+      <NavbarContent className="flex-col items-end">
+        {/* แถวที่ 1: font size + language */}
+        <NavbarItem className="flex gap-2">
           <Button
             size="sm"
             variant="light"
@@ -118,7 +123,6 @@ export default function Header() {
               <DropdownItem key="en">English</DropdownItem>
             </DropdownMenu>
           </Dropdown>
-
           <Button
             size="sm"
             variant="light"
@@ -128,7 +132,10 @@ export default function Header() {
           >
             <Network size={16} />
           </Button>
+        </NavbarItem>
 
+        {/* แถวที่ 2: site map + social links */}
+        <NavbarItem className="flex gap-2">
           <div className="flex gap-2 justify-end">
             {socialLinks.map(({ icon: Icon, label, href }) => (
               <Button
