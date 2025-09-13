@@ -21,31 +21,31 @@ const quickAccessItems: QuickAccessItem[] = [
   {
     title: "ตรวจสอบข้อมูล",
     icon: <Search className="w-6 h-6" />,
-    href: "/services/check",
+    href: "#",
     color: "bg-blue-100 text-blue-600",
   },
   {
     title: "ดาวน์โหลดเอกสาร",
     icon: <Download className="w-6 h-6" />,
-    href: "/services/download",
+    href: "#",
     color: "bg-green-100 text-green-600",
   },
   {
     title: "จองคิวออนไลน์",
     icon: <CalendarClock className="w-6 h-6" />,
-    href: "/services/booking",
+    href: "#",
     color: "bg-orange-100 text-orange-600",
   },
   {
     title: "ระบบร้องเรียน/แจ้งเรื่อง",
     icon: <Megaphone className="w-6 h-6" />,
-    href: "/services/complaint",
+    href: "#",
     color: "bg-red-100 text-red-600",
   },
   {
     title: "ศูนย์ข้อมูลสถิติ",
     icon: <BarChart3 className="w-6 h-6" />,
-    href: "/services/statistics",
+    href: "#",
     color: "bg-purple-100 text-purple-600",
   },
 ];
