@@ -22,7 +22,7 @@ export default async function Home() {
       <PublicRelations />
 
       <div className="container mx-auto">
-        <div className="grid grid-cols-1 xs:grid-cols-1 md:grid-cols-3 px-4 sm:px-0 sm:gap-8">
+        <div className="grid grid-cols-1 xs:grid-cols-1 md:grid-cols-3 px-8 sm:px-0 sm:gap-8">
           <EventsCalendar />
           <div className="col-span-2">
             <Gallery />

@@ -43,7 +43,7 @@ export default function Gallery() {
   };
 
   return (
-    <section className="container mx-auto px-4 py-8">
+    <section className="container mx-auto py-8">
       {/* Swiper หลัก */}
       <div className="w-full h-[400px] mb-6 overflow-hidden rounded-2xl shadow-lg">
         <Swiper
