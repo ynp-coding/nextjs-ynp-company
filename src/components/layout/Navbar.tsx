@@ -30,7 +30,7 @@ const services = [
 
 const news = [
   { id: 1, label: "ข่าวผู้บริหาร", href: "/news/executive" },
-  { id: 1, label: "ประชาสัมพันธ์", href: "/news/public-relations" },
+  { id: 2, label: "ประชาสัมพันธ์", href: "/news/public-relations" },
 ];
 
 export default function Navbar() {
@@ -64,7 +64,7 @@ export default function Navbar() {
             <DropdownMenu aria-label="เมนูเกี่ยวกับองค์กร" items={aboutUs}>
               {(item) => (
                 <DropdownItem
-                  key={`about-${item.id}`}
+                  key={`about${item.id}`}
                   onPress={() => router.push(item.href)}
                 >
                   {item.label}
@@ -88,7 +88,7 @@ export default function Navbar() {
             <DropdownMenu aria-label="ข่าวสาร" items={news}>
               {(item) => (
                 <DropdownItem
-                  key={`news-${item.id}`}
+                  key={`news${item.id}`}
                   onPress={() => router.push(item.href)}
                 >
                   {item.label}
@@ -112,7 +112,7 @@ export default function Navbar() {
             <DropdownMenu aria-label="บริการเมนู" items={services}>
               {(item) => (
                 <DropdownItem
-                  key={`services-${item.id}`}
+                  key={`services${item.id}`}
                   onPress={() => router.push(item.href)}
                 >
                   {item.label}
