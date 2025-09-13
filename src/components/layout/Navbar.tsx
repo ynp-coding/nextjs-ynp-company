@@ -16,26 +16,19 @@ import { ChevronDown, SearchIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 
-const aboutUs = [
-  { id: "about-1", href: "/history" },
-  { id: "about-2", href: "/vision-mission" },
-  { id: "about-3", href: "/executive" },
-  { id: "about-4", href: "/structure" },
-];
-
-const services = [
-  { id: "service-1", href: "/information" },
-  { id: "service-2", href: "/complain" },
-];
-
-const news = [
-  { id: "news-1", href: "/news/executive" },
-  { id: "news-2", href: "/news/public-relations" },
-];
+interface MenuItem {
+  id: string;
+  label: string;
+  href: string;
+}
 
 export default function Navbar() {
   const router = useRouter();
   const t = useTranslations();
+
+  const aboutUs = Object.values(t.raw("navbar.about.links")) as MenuItem[];
+  const news = Object.values(t.raw("navbar.news.links")) as MenuItem[];
+  const services = Object.values(t.raw("navbar.services.links")) as MenuItem[];
 
   return (
     <NavbarUI maxWidth="2xl" isBordered>
@@ -61,13 +54,13 @@ export default function Navbar() {
                 {t("navbar.about.label")}
               </Button>
             </DropdownTrigger>
-            <DropdownMenu aria-label="เมนูเกี่ยวกับองค์กร" items={aboutUs}>
+            <DropdownMenu aria-label={t("navbar.about.label")} items={aboutUs}>
               {(item) => (
                 <DropdownItem
                   key={`${item.id}`}
                   onPress={() => router.push(item.href)}
                 >
-                  {t(`navbar.about.links.${item.id}`)}
+                  {item.label}
                 </DropdownItem>
               )}
             </DropdownMenu>
@@ -85,13 +78,13 @@ export default function Navbar() {
                 {t("navbar.news.label")}
               </Button>
             </DropdownTrigger>
-            <DropdownMenu aria-label="ข่าวสาร" items={news}>
+            <DropdownMenu aria-label={t("navbar.news.label")} items={news}>
               {(item) => (
                 <DropdownItem
                   key={`${item.id}`}
                   onPress={() => router.push(item.href)}
                 >
-                  {t(`navbar.news.links.${item.id}`)}
+                  {item.label}
                 </DropdownItem>
               )}
             </DropdownMenu>
@@ -109,13 +102,16 @@ export default function Navbar() {
                 {t("navbar.services.label")}
               </Button>
             </DropdownTrigger>
-            <DropdownMenu aria-label="บริการเมนู" items={services}>
+            <DropdownMenu
+              aria-label={t("navbar.services.label")}
+              items={services}
+            >
               {(item) => (
                 <DropdownItem
                   key={`${item.id}`}
                   onPress={() => router.push(item.href)}
                 >
-                  {t(`navbar.services.links.${item.id}`)}
+                  {item.label}
                 </DropdownItem>
               )}
             </DropdownMenu>

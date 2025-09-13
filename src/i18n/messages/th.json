@@ -17,26 +17,58 @@
     "home": "หน้าแรก",
     "about": {
       "label": "เกี่ยวกับเรา",
-      "links": {
-        "about-1": "ประวัติความเป็นมา",
-        "about-2": "วิสัยทัศน์ พันธกิจ",
-        "about-3": "ผู้บริหาร",
-        "about-4": "โครงสร้างหน่วยงาน"
-      }
+      "links": [
+        {
+          "id": "about-1",
+          "label": "ประวัติความเป็นมา",
+          "href": "/history"
+        },
+        {
+          "id": "about-2",
+          "label": "วิสัยทัศน์ พันธกิจ",
+          "href": "/vision-mission"
+        },
+        {
+          "id": "about-3",
+          "label": "ผู้บริหาร",
+          "href": "/executive"
+        },
+        {
+          "id": "about-4",
+          "label": "โครงสร้างหน่วยงาน",
+          "href": "/structure"
+        }
+      ]
     },
     "news": {
       "label": "ข่าวสาร",
-      "links": {
-        "news-1": "ข่าวผู้บริหาร",
-        "news-2": "ประชาสัมพันธ์"
-      }
+      "links": [
+        {
+          "id": "news-1",
+          "label": "ข่าวผู้บริหาร",
+          "href": "/news/executive"
+        },
+        {
+          "id": "news-2",
+          "label": "ประชาสัมพันธ์",
+          "href": "/news/public-relations"
+        }
+      ]
     },
     "services": {
       "label": "บริการ",
-      "links": {
-        "service-1": "ข้อมูลการบริการ",
-        "service-2": "ร้องเรียน ร้องทุกข์"
-      }
+      "links": [
+        {
+          "id": "service-1",
+          "label": "ข้อมูลการบริการ",
+          "href": "/information"
+        },
+        {
+          "id": "service-2",
+          "label": "ร้องเรียน ร้องทุกข์",
+          "href": "/complain"
+        }
+      ]
     },
     "contact": "ติดต่อเรา"
   }

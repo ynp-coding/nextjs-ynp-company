@@ -17,26 +17,58 @@
     "home": "Home",
     "about": {
       "label": "About Us",
-      "links": {
-        "about-1": "Our History",
-        "about-2": "Vision & Mission",
-        "about-3": "Executives",
-        "about-4": "Organizational Structure"
-      }
+      "links": [
+        {
+          "id": "about-1",
+          "label": "Our History",
+          "href": "/history"
+        },
+        {
+          "id": "about-2",
+          "label": "Vision & Mission",
+          "href": "/vision-mission"
+        },
+        {
+          "id": "about-3",
+          "label": "Executives",
+          "href": "/executive"
+        },
+        {
+          "id": "about-4",
+          "label": "Organizational Structure",
+          "href": "/structure"
+        }
+      ]
     },
     "news": {
       "label": "News",
-      "links": {
-        "news-1": "Executive News",
-        "news-2": "Announcements"
-      }
+      "links": [
+        {
+          "id": "news-1",
+          "label": "Executive News",
+          "href": "/news/executive"
+        },
+        {
+          "id": "news-2",
+          "label": "Public Relations",
+          "href": "/news/public-relations"
+        }
+      ]
     },
     "services": {
       "label": "Services",
-      "links": {
-        "service-1": "Service Information",
-        "service-2": "Complaints & Grievances"
-      }
+      "links": [
+        {
+          "id": "service-1",
+          "label": "Service Information",
+          "href": "/information"
+        },
+        {
+          "id": "service-2",
+          "label": "Complaints & Grievances",
+          "href": "/complain"
+        }
+      ]
     },
     "contact": "Contact Us"
   }
