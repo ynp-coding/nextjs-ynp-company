@@ -80,7 +80,7 @@ const socials = [
 
 export default function Footer() {
   return (
-    <div>
+    <footer className="mt-12">
       <section className="container mx-auto">
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
           <div className="flex flex-col gap-y-2">
@@ -175,6 +175,6 @@ export default function Footer() {
           </div>
         </div>
       </section>
-    </div>
+    </footer>
   );
 }
