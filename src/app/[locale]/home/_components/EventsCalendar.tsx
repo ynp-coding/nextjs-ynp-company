@@ -11,7 +11,7 @@ const events = [
     date: "12 ก.ย. 2568",
     location: "ห้องประชุมใหญ่ กรมฯ",
     category: "อบรม",
-    href: "/events/1",
+    href: "#",
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ const events = [
     date: "15 ก.ย. 2568",
     location: "ออนไลน์ (Zoom)",
     category: "ประชุม",
-    href: "/events/2",
+    href: "#",
   },
   {
     id: 3,
@@ -27,7 +27,7 @@ const events = [
     date: "20 ก.ย. 2568",
     location: "ลานกิจกรรม กรมฯ",
     category: "กิจกรรม",
-    href: "/events/3",
+    href: "#",
   },
   {
     id: 4,
@@ -35,7 +35,7 @@ const events = [
     date: "25 ก.ย. 2568",
     location: "ห้องประชุม A-201",
     category: "ประกวด",
-    href: "/events/4",
+    href: "#",
   },
   {
     id: 5,
@@ -43,7 +43,7 @@ const events = [
     date: "28 ก.ย. 2568",
     location: "สนามกีฬา กรมฯ",
     category: "กีฬา",
-    href: "/events/5",
+    href: "#",
   },
   {
     id: 6,
@@ -51,7 +51,7 @@ const events = [
     date: "30 ก.ย. 2568",
     location: "ห้องประชุม B-101",
     category: "สัมมนา",
-    href: "/events/6",
+    href: "#",
   },
 ];
 
