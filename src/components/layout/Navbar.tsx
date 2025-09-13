@@ -88,7 +88,7 @@ export default function Navbar() {
             <DropdownMenu aria-label="ข่าวสาร" items={news}>
               {(item) => (
                 <DropdownItem
-                  key={`about-${item.id}`}
+                  key={`news-${item.id}`}
                   onPress={() => router.push(item.href)}
                 >
                   {item.label}
@@ -112,7 +112,7 @@ export default function Navbar() {
             <DropdownMenu aria-label="บริการเมนู" items={services}>
               {(item) => (
                 <DropdownItem
-                  key={`service-${item.id}`}
+                  key={`services-${item.id}`}
                   onPress={() => router.push(item.href)}
                 >
                   {item.label}
