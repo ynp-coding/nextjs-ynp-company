@@ -50,7 +50,7 @@ export default function RelatedLinks() {
             </h2>
           </div>
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8">
           {relatedLinks.map((link) => (
             <Link key={link.name} href={link.href} target="_blank">
               <Card
