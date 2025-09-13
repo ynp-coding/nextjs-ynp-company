@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPolicyPage() {
   return (
-    <div className="container mx-auto py-8">
+    <div className="container mx-auto px-8 sm:px-0 md:px-0 lg:px-0">
       <Breadcrumbs
         items={[
           { label: "หน้าหลัก", href: "/home" },
