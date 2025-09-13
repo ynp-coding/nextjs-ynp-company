@@ -24,21 +24,14 @@ import {
   Plus,
   Youtube,
 } from "lucide-react";
-import { useRouter } from "next/navigation";
+
+import { useRouter, usePathname } from "@/i18n/navigation";
 
 import Image from "next/image";
 
-export const AcmeLogo = () => (
-  <svg fill="none" height="100" width="100" viewBox="0 0 32 32">
-    <path
-      d="M17.6482 10.1305L15.8785 7.02583L7.02979 22.5499H10.5278L17.6482 10.1305ZM19.8798 14.0457L18.11 17.1983L19.394 19.4511H16.8453L15.1056 22.5499H24.7272L19.8798 14.0457Z"
-      fill="currentColor"
-    />
-  </svg>
-);
-
 export default function Header() {
   const router = useRouter();
+  const pathname = usePathname();
 
   // Font size state
   const [fontSize, setFontSize] = useState(16);
@@ -48,6 +41,11 @@ export default function Header() {
 
   // Language state
   const [language, setLanguage] = useState<"th" | "en">("th");
+
+  const changeLocale = (key: string) => {
+    setLanguage(key as "th" | "en");
+    router.push(pathname, { locale: key });
+  };
 
   // Social links
   const socialLinks = [
@@ -114,7 +112,7 @@ export default function Header() {
             </DropdownTrigger>
             <DropdownMenu
               aria-label="เลือกภาษา"
-              onAction={(key) => setLanguage(key as "th" | "en")}
+              onAction={(key) => changeLocale(key as "th" | "en")}
             >
               <DropdownItem key="th">ไทย</DropdownItem>
               <DropdownItem key="en">English</DropdownItem>
