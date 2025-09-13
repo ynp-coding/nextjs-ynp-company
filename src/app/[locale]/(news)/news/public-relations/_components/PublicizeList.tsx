@@ -1,9 +1,9 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { Input, Button, Pagination } from "@heroui/react";
-import { Search } from "lucide-react";
+import { Input, Button, Pagination, Select, SelectItem } from "@heroui/react";
 
+import { parseThaiDate } from "@/utils/format";
 import NewsList from "@/components/ui/news-list";
 
 type NewsItem = {
@@ -74,77 +74,127 @@ const newsData: NewsItem[] = [
 ];
 
 export default function PublicizeList() {
-  const [filterValue, setFilterValue] = useState("");
+  const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
-  const rowsPerPage = 6;
+  const [sort, setSort] = useState("date-desc");
+  const pageSize = 8;
 
+  // filter & sort
   const filteredItems = useMemo(() => {
-    return newsData.filter((item) =>
-      item.title.toLowerCase().includes(filterValue.toLowerCase())
-    );
-  }, [filterValue]);
+    let result = [...newsData];
 
-  const pages = Math.ceil(filteredItems.length / rowsPerPage);
+    if (search) {
+      result = result.filter((item) =>
+        item.title.toLowerCase().includes(search.toLowerCase())
+      );
+    }
 
-  const items = useMemo(() => {
-    const start = (page - 1) * rowsPerPage;
-    return filteredItems.slice(start, start + rowsPerPage);
+    result.sort((a, b) => {
+      switch (sort) {
+        case "date-desc":
+          return (
+            parseThaiDate(b.date).getTime() - parseThaiDate(a.date).getTime()
+          );
+        case "date-asc":
+          return (
+            parseThaiDate(a.date).getTime() - parseThaiDate(b.date).getTime()
+          );
+        case "views-desc":
+          return b.views - a.views;
+        case "views-asc":
+          return a.views - b.views;
+        case "title-asc":
+          return a.title.localeCompare(b.title, "th");
+        case "title-desc":
+          return b.title.localeCompare(a.title, "th");
+        default:
+          return 0;
+      }
+    });
+
+    return result;
+  }, [search, sort]);
+
+  const totalPages = Math.ceil(filteredItems.length / pageSize);
+
+  const paginatedItems = useMemo(() => {
+    const start = (page - 1) * pageSize;
+    return filteredItems.slice(start, start + pageSize);
   }, [page, filteredItems]);
-
-  const onPreviousPage = () => {
-    if (page > 1) setPage(page - 1);
-  };
-
-  const onNextPage = () => {
-    if (page < pages) setPage(page + 1);
-  };
 
   return (
     <div className="space-y-6">
-      {/* Search */}
-      <div className="flex justify-between items-center">
+      {/* Search + Sort */}
+      <div className="flex flex-col sm:flex-row justify-between items-center gap-2">
         <Input
-          isClearable
-          className="w-full sm:max-w-[400px]"
-          placeholder="ค้นหาประชาสัมพันธ์..."
-          startContent={<Search className="text-gray-400" size={18} />}
-          value={filterValue}
-          onClear={() => setFilterValue("")}
-          onValueChange={setFilterValue}
+          placeholder="ค้นหาข่าว..."
+          value={search}
+          onChange={(e) => {
+            setSearch(e.target.value);
+            setPage(1);
+          }}
+          className="max-w-sm"
         />
+
+        <Select
+          aria-label="เรียงลำดับ"
+          selectedKeys={[sort]}
+          onChange={(e) => {
+            setSort(e.target.value);
+            setPage(1);
+          }}
+          className="max-w-xs"
+        >
+          <SelectItem key="title-asc">ชื่อเรื่อง ก - ฮ</SelectItem>
+          <SelectItem key="title-desc">ชื่อเรื่อง ฮ - ก</SelectItem>
+          <SelectItem key="date-desc">วันที่ปรับปรุงล่าสุด</SelectItem>
+          <SelectItem key="date-asc">วันที่ปรับปรุงเก่าสุด</SelectItem>
+          <SelectItem key="views-desc">ยอดเข้าชมมากที่สุด</SelectItem>
+          <SelectItem key="views-asc">ยอดเข้าชมน้อยที่สุด</SelectItem>
+        </Select>
       </div>
 
       {/* List */}
-      <NewsList items={items} />
+      {filteredItems.length === 0 ? (
+        <div className="text-center text-gray-500 py-10">
+          ไม่พบข้อมูลที่ค้นหา
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 gap-6">
+          <NewsList items={paginatedItems} />
+        </div>
+      )}
 
-      {/* Footer Pagination */}
-      <div className="py-2 px-2 flex justify-between items-center">
-        <span className="w-[30%] text-small text-default-400">
-          {filteredItems.length} รายการ
+      {/* Pagination */}
+      <div className="py-2 px-2 flex flex-col sm:flex-row justify-between items-center mt-6 gap-2">
+        <span className="text-sm text-gray-500">
+          ทั้งหมด {filteredItems.length} รายการ
         </span>
+
         <Pagination
           isCompact
           showControls
           showShadow
           color="primary"
           page={page}
-          total={pages}
+          total={totalPages}
           onChange={setPage}
         />
-        <div className="hidden sm:flex w-[30%] justify-end gap-2">
+
+        <div className="hidden sm:flex justify-end gap-2">
           <Button
             isDisabled={page === 1}
             size="sm"
             variant="flat"
-            onPress={onPreviousPage}
+            onPress={() => setPage((prev) => Math.max(prev - 1, 1))}
           >
             ก่อนหน้า
           </Button>
           <Button
-            isDisabled={page === pages}
+            isDisabled={page === totalPages}
             size="sm"
             variant="flat"
-            onPress={onNextPage}
+            onPress={() => setPage((prev) => Math.min(prev + 1, totalPages))}
           >
             ถัดไป
           </Button>

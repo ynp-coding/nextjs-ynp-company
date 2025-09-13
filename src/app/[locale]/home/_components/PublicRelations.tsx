@@ -12,7 +12,7 @@ type PRNews = {
   href: string;
 };
 
-export default function PublicRelationsSection() {
+export default function PublicRelations() {
   const newsList: PRNews[] = [
     {
       id: 1,
