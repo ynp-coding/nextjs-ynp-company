@@ -1,10 +1,10 @@
 import { Metadata } from "next";
 import QuickAccess from "./_components/QuickAccess";
 
-import ExecutivesNewsSection from "./_components/ExecutivesNewsSection";
+import ExecutivesNews from "./_components/ExecutivesNews";
 import EventsCalendar from "./_components/EventsCalendar";
-import RelatedLinksSection from "./_components/RelatedLinksSection";
-import PublicRelationsSection from "./_components/PublicRelationsSection";
+import RelatedLinks from "./_components/RelatedLinks";
+import PublicRelations from "./_components/PublicRelations";
 import Gallery from "./_components/Gallery";
 
 export const metadata: Metadata = {
@@ -17,9 +17,9 @@ export default async function Home() {
     <div>
       <QuickAccess />
 
-      <ExecutivesNewsSection />
+      <ExecutivesNews />
 
-      <PublicRelationsSection />
+      <PublicRelations />
 
       <div className="container mx-auto">
         <div className="grid grid-cols-1 xs:grid-cols-1 md:grid-cols-3 px-4 sm:px-0 sm:gap-8">
@@ -30,7 +30,7 @@ export default async function Home() {
         </div>
       </div>
 
-      <RelatedLinksSection />
+      <RelatedLinks />
     </div>
   );
 }
