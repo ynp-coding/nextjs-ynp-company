@@ -76,7 +76,7 @@ export default function PublicRelationsSection() {
 
   return (
     <section className="my-6 py-12 bg-gray-50">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 sm:px-0 md:px-0">
         {/* หัวข้อ Section */}
         <div className="flex items-center justify-between mb-8">
           <div>

@@ -114,7 +114,7 @@ export default function ExecutivesNewsSection() {
   const firstRow = newsList.slice(0, 4);
 
   return (
-    <section className="container mx-auto">
+    <section className="container mx-auto px-4 sm:px-0 md:px-0">
       <div className="flex items-center justify-between mb-8">
         <div>
           <h2 className="text-2xl font-bold text-gray-800 flex items-center gap-2">

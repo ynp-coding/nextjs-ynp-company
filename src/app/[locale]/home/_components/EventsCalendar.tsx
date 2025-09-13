@@ -59,7 +59,7 @@ export default function EventsCalendar() {
   return (
     <section className="my-6">
       {/* Header */}
-      <div className="flex items-center justify-between mb-5 container mx-auto px-4">
+      <div className="flex items-center justify-between mb-5">
         <div>
           <h2 className="text-xl font-bold flex items-center gap-2">
             <CalendarDays className="w-5 h-5 text-primary" />
