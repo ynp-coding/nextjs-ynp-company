@@ -118,13 +118,18 @@ export default function ExecutivesNews() {
       <div className="flex items-center justify-between mb-8">
         <div>
           <h2 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
-            <Newspaper className="w-6 h-6 text-primary" />
+            <Newspaper
+              className="w-6 h-6 text-primary"
+              aria-label="ข่าวผู้บริหาร"
+            />
             ข่าวผู้บริหาร
           </h2>
           <p className="text-gray-500 text-sm">ติดตามข่าวผู้บริหารล่าสุด</p>
         </div>
         <Button
-          endContent={<ArrowRight size={18} />}
+          endContent={
+            <ArrowRight size={16} aria-hidden="true" focusable="false" />
+          }
           color="primary"
           variant="flat"
           as={Link}
