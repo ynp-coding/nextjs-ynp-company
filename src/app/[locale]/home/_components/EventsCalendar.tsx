@@ -62,7 +62,10 @@ export default function EventsCalendar() {
       <div className="flex items-center justify-between mb-5">
         <div>
           <h2 className="text-xl font-bold flex items-center gap-2">
-            <CalendarDays className="w-5 h-5 text-primary" />
+            <CalendarDays
+              className="w-5 h-5 text-primary"
+              aria-label="ปฏิทินกิจกรรม"
+            />
             ปฏิทินกิจกรรม
           </h2>
           <p className="text-gray-500 text-sm">
@@ -72,7 +75,9 @@ export default function EventsCalendar() {
         <Button
           as={Link}
           href="/events"
-          endContent={<ArrowRight size={16} />}
+          endContent={
+            <ArrowRight size={16} aria-hidden="true" focusable="false" />
+          }
           color="primary"
           variant="flat"
         >
@@ -96,15 +101,30 @@ export default function EventsCalendar() {
               </Link>
               <div className="mt-2 flex flex-wrap items-center gap-3 text-xs text-gray-600">
                 <span className="flex items-center gap-1">
-                  <CalendarDays size={14} className="text-primary" />
+                  <CalendarDays
+                    size={14}
+                    className="text-primary"
+                    aria-hidden="true"
+                    focusable="false"
+                  />
                   {event.date}
                 </span>
                 <span className="flex items-center gap-1">
-                  <MapPin size={14} className="text-green-600" />
+                  <MapPin
+                    size={14}
+                    className="text-green-600"
+                    aria-hidden="true"
+                    focusable="false"
+                  />
                   {event.location}
                 </span>
                 <span className="flex items-center gap-1">
-                  <Tag size={14} className="text-blue-600" />
+                  <Tag
+                    size={14}
+                    className="text-blue-600"
+                    aria-hidden="true"
+                    focusable="false"
+                  />
                   {event.category}
                 </span>
               </div>
