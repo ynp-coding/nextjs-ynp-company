@@ -3,6 +3,7 @@
 import { ArrowRight, Megaphone } from "lucide-react";
 import { Button } from "@heroui/react";
 import NewsList from "@/components/ui/news-list";
+import Link from "next/link";
 
 type PRNews = {
   id: number;
@@ -92,11 +93,14 @@ export default function PublicRelations() {
             </p>
           </div>
           <Button
+            as={Link}
             endContent={
               <ArrowRight size={16} aria-hidden="true" focusable="false" />
             }
             color="primary"
             variant="flat"
+            aria-label="ดูข่าวประชาสัมพันธ์ทั้งหมด"
+            href="#"
           >
             ดูทั้งหมด
           </Button>
