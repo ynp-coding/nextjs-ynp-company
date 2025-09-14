@@ -48,6 +48,7 @@ export default function NewsList({ items }: NewsListProps) {
             size="sm"
             color="primary"
             variant="flat"
+            aria-labelledby="อ่านต่อ"
           >
             อ่านต่อ
           </Button>

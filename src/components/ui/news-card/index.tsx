@@ -52,6 +52,7 @@ export default function NewsCard({ news }: { news: NewsCardProps }) {
           size="sm"
           variant="flat"
           color="primary"
+          aria-labelledby="อ่านต่อ"
         >
           อ่านต่อ
         </Button>
