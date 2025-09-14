@@ -81,7 +81,10 @@ export default function PublicRelations() {
         <div className="flex items-center justify-between mb-8">
           <div>
             <h2 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
-              <Megaphone className="w-6 h-6 text-primary" />
+              <Megaphone
+                className="w-6 h-6 text-primary"
+                aria-label="ข่าวประชาสัมพันธ์"
+              />
               ข่าวประชาสัมพันธ์
             </h2>
             <p className="text-gray-500 text-sm">
@@ -89,7 +92,9 @@ export default function PublicRelations() {
             </p>
           </div>
           <Button
-            endContent={<ArrowRight size={18} />}
+            endContent={
+              <ArrowRight size={16} aria-hidden="true" focusable="false" />
+            }
             color="primary"
             variant="flat"
           >
