@@ -93,12 +93,12 @@ export default function ExecutiveNewsList({
           onChange={(e) => setSort(e.target.value)}
           className="max-w-xs"
         >
-          <SelectItem key="title-asc">เรียงตามชื่อเรื่อง ก - ฮ</SelectItem>
-          <SelectItem key="title-desc">รียงตามชื่อเรื่อง ฮ - ก</SelectItem>
-          <SelectItem key="latest">เรียงตามวันที่ปรับปรุงล่าสุด</SelectItem>
-          <SelectItem key="oldest">เรียงตามวันที่ปรับปรุงเก่าสุด</SelectItem>
-          <SelectItem key="views-desc">เรียงตามยอดเข้าชมมากที่สุด</SelectItem>
-          <SelectItem key="views-asc">เรียงตามยอดเข้าชมน้อยที่สุด</SelectItem>
+          <SelectItem key="title-asc">ชื่อเรื่อง ก - ฮ</SelectItem>
+          <SelectItem key="title-desc">ชื่อเรื่อง ฮ - ก</SelectItem>
+          <SelectItem key="latest">วันที่ปรับปรุงล่าสุด</SelectItem>
+          <SelectItem key="oldest">วันที่ปรับปรุงเก่าสุด</SelectItem>
+          <SelectItem key="views-desc">ยอดเข้าชมมากที่สุด</SelectItem>
+          <SelectItem key="views-asc">ยอดเข้าชมน้อยที่สุด</SelectItem>
         </Select>
       </div>
 
