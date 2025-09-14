@@ -36,7 +36,7 @@ export default function NewsCard({ news }: { news: NewsCardProps }) {
           </div>
         </div>
 
-        <p className="text-sm text-gray-600 mt-2 line-clamp-3">
+        <p className="text-sm text-gray-500 dark:text-white mt-2 line-clamp-3">
           {news.description}
         </p>
       </CardBody>

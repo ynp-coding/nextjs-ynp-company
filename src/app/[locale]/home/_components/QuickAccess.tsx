@@ -67,7 +67,7 @@ export default function QuickAccess() {
                 >
                   {item.icon}
                 </div>
-                <span className="text-sm font-medium text-gray-700 min-h-[40px] flex items-center justify-center">
+                <span className="text-sm font-medium min-h-[40px] flex items-center justify-center">
                   {item.title}
                 </span>
               </CardBody>

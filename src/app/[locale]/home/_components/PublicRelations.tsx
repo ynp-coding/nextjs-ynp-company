@@ -76,19 +76,19 @@ export default function PublicRelations() {
   const firstRow = newsList.slice(0, 5);
 
   return (
-    <section className="bg-gray-50">
+    <section className="bg-gray-50 dark:bg-black">
       <div className="container mx-auto px-8 py-8 sm:px-0 md:px-0">
         {/* หัวข้อ Section */}
         <div className="flex items-center justify-between mb-8">
           <div>
-            <h2 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
+            <h2 className="text-2xl font-bold flex items-center gap-2">
               <Megaphone
                 className="w-6 h-6 text-primary"
                 aria-label="ข่าวประชาสัมพันธ์"
               />
               ข่าวประชาสัมพันธ์
             </h2>
-            <p className="text-gray-500 text-sm">
+            <p className="text-sm">
               ติดตามข่าวประชาสัมพันธ์ล่าสุดจากกรม/องค์กร
             </p>
           </div>
