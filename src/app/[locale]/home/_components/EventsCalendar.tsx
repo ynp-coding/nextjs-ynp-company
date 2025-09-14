@@ -80,6 +80,7 @@ export default function EventsCalendar() {
           }
           color="primary"
           variant="flat"
+          aria-label="ดูปฏิทินกิจกรรมทั้งหมด"
         >
           ดูทั้งหมด
         </Button>
