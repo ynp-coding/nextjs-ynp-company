@@ -134,6 +134,7 @@ export default function ExecutivesNews() {
           variant="flat"
           as={Link}
           href="/news/executive"
+          aria-label="ดูข่าวผู้บริหารทั้งหมด"
         >
           ดูทั้งหมด
         </Button>
