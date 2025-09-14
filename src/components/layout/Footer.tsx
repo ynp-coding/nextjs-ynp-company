@@ -90,6 +90,7 @@ export default function Footer() {
                 key={`about-${index}`}
                 href={about.href}
                 className="hover:underline"
+                aria-labelledby={about.title}
               >
                 {about.title}
               </Link>
@@ -103,6 +104,7 @@ export default function Footer() {
                 key={`service-${index}`}
                 href={news.href}
                 className="hover:underline"
+                aria-labelledby={news.title}
               >
                 {news.title}
               </Link>
@@ -116,6 +118,7 @@ export default function Footer() {
                 key={`service-${index}`}
                 href={service.href}
                 className="hover:underline"
+                aria-labelledby={service.title}
               >
                 {service.title}
               </Link>
@@ -135,6 +138,7 @@ export default function Footer() {
                     size="sm"
                     variant="light"
                     isIconOnly
+                    aria-labelledby={`links social ${index}`}
                   >
                     {social.icon}
                   </Button>
@@ -168,6 +172,7 @@ export default function Footer() {
                 key={`policy-${index}`}
                 href={policy.href}
                 className="text-sm hover:underline block"
+                aria-labelledby={policy.title}
               >
                 {policy.title}
               </Link>
