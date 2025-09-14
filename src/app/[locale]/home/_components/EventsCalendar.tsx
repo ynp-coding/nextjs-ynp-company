@@ -74,7 +74,7 @@ export default function EventsCalendar() {
         </div>
         <Button
           as={Link}
-          href="/events"
+          href="#"
           endContent={
             <ArrowRight size={16} aria-hidden="true" focusable="false" />
           }
