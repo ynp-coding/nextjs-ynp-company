@@ -76,6 +76,7 @@ export default function Gallery() {
               viewBox="0 0 48 48"
               className="w-6 h-6 rotate-[-90deg]"
               ref={progressCircle}
+              aria-label="progress-circle"
             >
               <circle
                 cx="24"
