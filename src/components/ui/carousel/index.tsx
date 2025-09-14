@@ -39,7 +39,7 @@ export default function Carousel({ items }: CarouselProps) {
             href={item.href}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={`Banner ${index}`}
+            aria-label={`Link Banner ${index}`}
           >
             <div className="relative w-full h-[500px]">
               <Image
