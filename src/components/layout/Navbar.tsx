@@ -132,7 +132,9 @@ export default function Navbar() {
       <NavbarContent className="hidden sm:flex" justify="end">
         <NavbarItem>
           <Input
-            startContent={<SearchIcon size={16} />}
+            startContent={
+              <SearchIcon size={16} aria-hidden="true" focusable="false" />
+            }
             isClearable
             className="w-full"
             classNames={{
@@ -143,6 +145,8 @@ export default function Navbar() {
             aria-label={t("common.search")}
             type="text"
             label={t("common.search")}
+            labelPlacement="inside"
+            size="sm"
           />
         </NavbarItem>
       </NavbarContent>
