@@ -36,6 +36,7 @@ export default function ContactForm() {
         fullWidth
         radius="lg"
         variant="bordered"
+        type="text"
       />
 
       <Input
@@ -60,6 +61,7 @@ export default function ContactForm() {
         minRows={4}
         radius="lg"
         variant="bordered"
+        type="text"
       />
 
       <Button type="submit" color="primary" fullWidth>
