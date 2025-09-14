@@ -151,8 +151,10 @@ export default function Header() {
                 isIconOnly
                 aria-label={`ลิงก์ ${label}`}
                 radius="full"
+                aria-labelledby={`ลิงก์ ${label}`}
               >
                 <Icon size={16} />
+                <span className="sr-only">{`links social ${label}`}</span>
               </Button>
             ))}
           </div>
