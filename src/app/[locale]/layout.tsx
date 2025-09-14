@@ -37,7 +37,7 @@ export default async function RootLayout({
   }
 
   return (
-    <html lang={locale} className="dark">
+    <html lang={locale} className="light">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         cz-shortcut-listen="true"
