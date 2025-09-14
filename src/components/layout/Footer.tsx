@@ -141,6 +141,7 @@ export default function Footer() {
                     aria-labelledby={`links social ${index}`}
                   >
                     {social.icon}
+                    <span className="sr-only">{`links social ${index}`}</span>
                   </Button>
                 ) : (
                   ""
