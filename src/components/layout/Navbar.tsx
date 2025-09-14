@@ -9,7 +9,6 @@ import {
   DropdownMenu,
   DropdownItem,
   Button,
-  Input,
 } from "@heroui/react";
 
 import { ChevronDown, SearchIcon } from "lucide-react";
@@ -131,22 +130,15 @@ export default function Navbar() {
 
       <NavbarContent className="hidden sm:flex" justify="end">
         <NavbarItem>
-          <Input
+          <Button
             startContent={
               <SearchIcon size={16} aria-hidden="true" focusable="false" />
             }
-            isClearable
-            className="w-full"
-            classNames={{
-              input: "w-full",
-              mainWrapper: "w-full",
-            }}
-            placeholder={t("common.search")}
             aria-label={t("common.search")}
-            type="text"
-            label={t("common.search")}
-            labelPlacement="inside"
             size="sm"
+            isIconOnly
+            color="default"
+            variant="light"
           />
         </NavbarItem>
       </NavbarContent>
