@@ -35,7 +35,12 @@ export default function Carousel({ items }: CarouselProps) {
     >
       {items.map((item, index) => (
         <SwiperSlide key={index}>
-          <a href={item.href} target="_blank" rel="noopener noreferrer">
+          <a
+            href={item.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Banner ${index}`}
+          >
             <div className="relative w-full h-[500px]">
               <Image
                 src={item.src}
