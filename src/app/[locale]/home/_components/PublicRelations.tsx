@@ -99,7 +99,7 @@ export default function PublicRelations() {
             }
             color="primary"
             variant="flat"
-            aria-label="ดูข่าวประชาสัมพันธ์ทั้งหมด"
+            aria-labelledby="ดูข่าวประชาสัมพันธ์ทั้งหมด"
             href="#"
           >
             ดูทั้งหมด
