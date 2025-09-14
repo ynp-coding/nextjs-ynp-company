@@ -142,6 +142,7 @@ export default function Navbar() {
             placeholder={t("common.search")}
             aria-label={t("common.search")}
             type="text"
+            label={t("common.search")}
           />
         </NavbarItem>
       </NavbarContent>
