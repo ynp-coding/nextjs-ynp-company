@@ -5,6 +5,16 @@
 @source '../../../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}';
 @custom-variant dark (&:is(.dark *));
 
+:root {
+  --font-size-base: 16px;
+}
+
+body {
+  font-size: var(--font-size-base);
+  transition: font-size 0.2s, background-color 0.3s, color 0.3s;
+  line-height: 1.6;
+}
+
 h1 {
   @apply text-2xl font-bold;
 }
