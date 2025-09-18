@@ -27,6 +27,7 @@ import {
 
 import { useRouter, usePathname } from "@/i18n/navigation";
 import { useLocale } from "next-intl";
+import { useTheme } from "next-themes";
 
 import Image from "next/image";
 
@@ -34,11 +35,15 @@ export default function Header() {
   const router = useRouter();
   const pathname = usePathname();
   const currentLocale = useLocale();
+  const { setTheme } = useTheme();
 
   // Font size state
   const [fontSize, setFontSize] = useState(16);
   useEffect(() => {
-    document.documentElement.style.fontSize = `${fontSize}px`;
+    document.documentElement.style.setProperty(
+      "--font-size-base",
+      `${fontSize}px`
+    );
   }, [fontSize]);
 
   // Language state
@@ -86,6 +91,39 @@ export default function Header() {
       <NavbarContent className="flex-col items-end">
         {/* แถวที่ 1: font size + language */}
         <NavbarItem className="flex gap-2">
+          <Button
+            size="sm"
+            variant="light"
+            className="bg-[#18181B] text-white"
+            isIconOnly
+            aria-label="ลดขนาดตัวอักษร"
+            onPress={() => setTheme("dark")}
+            radius="full"
+          >
+            C
+          </Button>
+          <Button
+            size="sm"
+            variant="light"
+            className="bg-white text-black"
+            isIconOnly
+            aria-label="ลดขนาดตัวอักษร"
+            onPress={() => setTheme("light")}
+            radius="full"
+          >
+            C
+          </Button>
+          <Button
+            size="sm"
+            variant="light"
+            className="bg-black text-[#FFFF00]"
+            isIconOnly
+            aria-label="ลดขนาดตัวอักษร"
+            onPress={() => setTheme("contrast")}
+            radius="full"
+          >
+            C
+          </Button>
           <Button
             size="sm"
             variant="light"
