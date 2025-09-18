@@ -139,7 +139,7 @@ export default function Header() {
             variant="light"
             isIconOnly
             aria-label="เพิ่มขนาดตัวอักษร"
-            onPress={() => setFontSize((prev) => Math.min(24, prev + 2))}
+            onPress={() => setFontSize((prev) => Math.min(20, prev + 2))}
             radius="full"
           >
             ก <Plus size={12} />

@@ -9,32 +9,68 @@
   --font-size-base: 16px;
 }
 
-body {
+/* Root variable สำหรับ font-size */
+:root {
+  --font-size-base: 16px; /* default */
+}
+
+/* ฟอนต์สำหรับข้อความทั้งหมด */
+.text-scale {
   font-size: var(--font-size-base);
-  transition: font-size 0.2s, background-color 0.3s, color 0.3s;
+}
+
+/* ใช้กับ tag ทั่วไป */
+p,
+div,
+span,
+a,
+li,
+button,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: var(--font-size-base);
   line-height: 1.6;
 }
 
+/* Heading สามารถเพิ่มความหนา/ขนาดสไตล์เฉพาะ */
 h1 {
-  @apply text-2xl font-bold;
+  font-weight: 700;
+  font-size: calc(var(--font-size-base) * 1.75);
 }
-
 h2 {
-  @apply text-xl font-bold;
+  font-weight: 700;
+  font-size: calc(var(--font-size-base) * 1.5);
 }
-
 h3 {
-  @apply text-lg font-bold;
+  font-weight: 700;
+  font-size: calc(var(--font-size-base) * 1.25);
 }
-
 h4 {
-  @apply text-medium font-bold;
+  font-weight: 700;
+  font-size: calc(var(--font-size-base) * 1.1);
 }
-
 h5 {
-  @apply text-sm font-bold;
+  font-weight: 700;
+  font-size: calc(var(--font-size-base) * 0.8);
+}
+h6 {
+  font-weight: 700;
+  font-size: calc(var(--font-size-base) * 0.5);
 }
 
-.text-xs {
-  @apply text-gray-500;
+/* Buttons และ input */
+button,
+input,
+textarea,
+select {
+  font-size: var(--font-size-base);
+}
+
+/* Transition นุ่ม ๆ เวลาปรับขนาด */
+html {
+  transition: font-size 0.2s;
 }
