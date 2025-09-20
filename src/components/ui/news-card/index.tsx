@@ -32,19 +32,21 @@ export default function NewsCard({ news }: { news: NewsCardProps }) {
           <h3 className="text-lg font-semibold line-clamp-2">{news.title}</h3>
           <div className="flex gap-2">
             <CalendarDays size={14} />
-            <span className="text-xs">{news.date}</span>
+            <span className="text-xs text-foreground/60">{news.date}</span>
           </div>
         </div>
 
-        <p className="text-sm text-gray-500 dark:text-white mt-2 line-clamp-3">
+        <p className="text-sm text-foreground/60 mt-2 line-clamp-3">
           {news.description}
         </p>
       </CardBody>
 
       <CardFooter className="flex justify-between p-4">
-        <div className="flex items-center text-gray-500 text-xs space-x-1">
+        <div className="flex items-center space-x-1">
           <Eye className="w-4 h-4" />
-          <span>{news.views.toLocaleString()} ครั้ง</span>
+          <span className="text-xs text-foreground/60">
+            {news.views.toLocaleString()} ครั้ง
+          </span>
         </div>
         <Button
           as={Link}
@@ -53,6 +55,7 @@ export default function NewsCard({ news }: { news: NewsCardProps }) {
           variant="flat"
           color="primary"
           aria-labelledby="อ่านต่อ"
+          className="text-xs"
         >
           อ่านต่อ
         </Button>

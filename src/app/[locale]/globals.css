@@ -70,3 +70,56 @@ select {
 html {
   transition: font-size 0.2s;
 }
+
+/* เทียบกับ Tailwind scale */
+.text-xs {
+  font-size: calc(var(--font-size-base) * 0.75); /* 12px ถ้า base=16 */
+}
+
+.text-sm {
+  font-size: calc(var(--font-size-base) * 0.875); /* 14px */
+}
+
+.text-base {
+  font-size: var(--font-size-base); /* 16px */
+}
+
+.text-lg {
+  font-size: calc(var(--font-size-base) * 1.125); /* 18px */
+}
+
+.text-xl {
+  font-size: calc(var(--font-size-base) * 1.25); /* 20px */
+}
+
+.text-2xl {
+  font-size: calc(var(--font-size-base) * 1.5); /* 24px */
+}
+
+.text-3xl {
+  font-size: calc(var(--font-size-base) * 1.875); /* 30px */
+}
+
+.text-4xl {
+  font-size: calc(var(--font-size-base) * 2.25); /* 36px */
+}
+
+.text-5xl {
+  font-size: calc(var(--font-size-base) * 3); /* 48px */
+}
+
+.text-6xl {
+  font-size: calc(var(--font-size-base) * 3.75); /* 60px */
+}
+
+.text-7xl {
+  font-size: calc(var(--font-size-base) * 4.5); /* 72px */
+}
+
+.text-8xl {
+  font-size: calc(var(--font-size-base) * 6); /* 96px */
+}
+
+.text-9xl {
+  font-size: calc(var(--font-size-base) * 8); /* 128px */
+}
