@@ -139,7 +139,7 @@ export default function ExecutivesNews() {
           aria-labelledby="see-all-executive-news"
           className="text-sm"
         >
-          <span id="see-all-executive-news">ดูทั้งหมด</span>
+          ดูทั้งหมด
         </Button>
       </div>
 
