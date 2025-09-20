@@ -8,6 +8,7 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 
 import CookieConsentFull from "@/components/ui/cookie";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const ibmPlexSansThai = IBM_Plex_Sans_Thai({
   weight: "500",
@@ -42,6 +43,7 @@ export default async function RootLayout({
         </NextIntlClientProvider>
 
         <CookieConsentFull />
+        <GoogleAnalytics gaId="G-X6984Q8LQ3" />
       </body>
     </html>
   );
