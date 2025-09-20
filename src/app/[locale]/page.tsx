@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Button } from "@heroui/button";
 import Image from "next/image";
 
@@ -22,6 +23,11 @@ const socials = [
     href: "#",
   },
 ];
+
+export const metadata: Metadata = {
+  title: "YNP Company | Home",
+  description: "Description",
+};
 
 export default function Welcome() {
   return (

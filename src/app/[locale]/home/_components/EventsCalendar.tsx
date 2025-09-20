@@ -88,7 +88,7 @@ export default function EventsCalendar() {
       </div>
 
       {/* Event List */}
-      <ul className="divide-y divide-gray-200 bg-white rounded-xl shadow-sm">
+      <ul className="divide-y divide-gray-200 bg-white dark:bg-background contrast:bg-background rounded-xl shadow-sm">
         {events.map((event) => (
           <li
             key={event.id}
@@ -97,12 +97,12 @@ export default function EventsCalendar() {
             <div>
               <Link
                 href={event.href}
-                className="text-base font-medium text-gray-800 hover:text-primary"
+                className="text-base font-medium hover:text-primary"
               >
                 {event.title}
               </Link>
-              <div className="mt-2 flex flex-wrap items-center gap-3 text-xs text-gray-600">
-                <span className="flex items-center gap-1">
+              <div className="mt-2 flex flex-wrap items-center gap-3 text-foreground/60">
+                <span className="flex items-center gap-1 text-xs">
                   <CalendarDays
                     size={14}
                     className="text-primary"
@@ -111,7 +111,7 @@ export default function EventsCalendar() {
                   />
                   {event.date}
                 </span>
-                <span className="flex items-center gap-1">
+                <span className="flex items-center gap-1 text-xs">
                   <MapPin
                     size={14}
                     className="text-green-600"
@@ -120,10 +120,10 @@ export default function EventsCalendar() {
                   />
                   {event.location}
                 </span>
-                <span className="flex items-center gap-1">
+                <span className="flex items-center gap-1 text-xs">
                   <Tag
                     size={14}
-                    className="text-blue-600"
+                    className="text-blue-600 "
                     aria-hidden="true"
                     focusable="false"
                   />
