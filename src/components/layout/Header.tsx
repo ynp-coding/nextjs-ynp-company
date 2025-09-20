@@ -70,7 +70,7 @@ export default function Header() {
       isBordered
       classNames={{ base: ["h-24"], content: "gap-2" }}
     >
-      <div className="container mx-auto flex items-center justify-between px-4">
+      <div className="container mx-auto flex items-center justify-between">
         <NavbarBrand
           onClick={() => router.push("/home")}
           className="cursor-pointer"
