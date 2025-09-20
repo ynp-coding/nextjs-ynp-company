@@ -8,6 +8,7 @@
 /* Root variable สำหรับ font-size */
 :root {
   --font-size-base: 16px;
+  --tree-stroke: #11181c;
 }
 
 html.contrast .contrast\:bg-background {
@@ -130,4 +131,22 @@ html {
 
 .text-9xl {
   font-size: calc(var(--font-size-base) * 8); /* 128px */
+}
+
+.dark {
+  --tree-stroke: #f5f5f5;
+}
+.contrast {
+  --tree-stroke: #ffff00;
+}
+
+.rd3t-link {
+  stroke: var(--tree-stroke) !important;
+  stroke-width: 2px !important;
+  z-index: 0 !important;
+}
+
+.rd3t-node > g > foreignObject > div {
+  position: relative;
+  z-index: 100;
 }

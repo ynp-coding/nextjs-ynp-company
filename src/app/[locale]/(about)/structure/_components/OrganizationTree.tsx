@@ -22,7 +22,7 @@ const data: RawNodeDatum = {
 const renderCustomNode = ({ nodeDatum }: CustomNodeElementProps) => (
   <g>
     <foreignObject width={200} height={100} x={-100} y={-30}>
-      <div className="bg-white shadow-md border border-gray-300 rounded-xl px-4 py-4 text-center">
+      <div className="bg-background shadow-md border rounded-xl px-4 py-4 text-center">
         <p className="text-sm">{nodeDatum.name}</p>
       </div>
     </foreignObject>
@@ -40,7 +40,7 @@ export default function OrganizationTree() {
   if (!isClient) return null;
 
   return (
-    <div className="w-full h-[700px] flex items-center justify-center">
+    <div className="w-full h-[700px] flex items-center">
       <Tree
         data={data}
         translate={translate}

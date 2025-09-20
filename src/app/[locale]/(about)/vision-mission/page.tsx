@@ -22,7 +22,7 @@ export default function VisionMissionPage() {
         {/* วิสัยทัศน์ */}
         <section>
           <h1 className="mb-6">วิสัยทัศน์</h1>
-          <p className="text-lg font-medium italic text-gray-700 leading-relaxed">
+          <p className="text-lg font-medium italic text-foreground/60 leading-relaxed">
             “เป็นองค์กรชั้นนำด้านนวัตกรรมดิจิทัลที่มุ่งสร้างคุณค่า
             ยกระดับคุณภาพชีวิต และขับเคลื่อนเศรษฐกิจดิจิทัลไทยสู่มาตรฐานสากล”
           </p>
@@ -31,7 +31,7 @@ export default function VisionMissionPage() {
         {/* พันธกิจ */}
         <section>
           <h2 className="text-2xl font-bold mb-4">พันธกิจ</h2>
-          <ul className="list-disc pl-6 space-y-2 text-gray-700">
+          <ul className="list-disc pl-6 space-y-2 text-foreground/60">
             <li>
               พัฒนาระบบและแพลตฟอร์มดิจิทัลที่มีคุณภาพสูง
               รองรับการใช้งานในระดับประเทศ

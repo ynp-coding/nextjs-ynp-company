@@ -20,7 +20,7 @@ export default function HistoryPage() {
 
       <h1 className="mb-6">ประวัติความเป็นมา</h1>
 
-      <div className="space-y-6 text-gray-700 leading-relaxed">
+      <div className="space-y-6 text-foreground/60 leading-relaxed">
         <p>
           <strong>YNP Coding</strong> ก่อตั้งขึ้นเมื่อปี พ.ศ. 2560
           โดยกลุ่มนักพัฒนาซอฟต์แวร์และนักวิเคราะห์ข้อมูลที่เล็งเห็นถึงความสำคัญ

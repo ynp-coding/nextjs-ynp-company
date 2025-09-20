@@ -54,7 +54,7 @@ export default function ExecutivesPage() {
           {executives.map((exec, index) => (
             <div
               key={index}
-              className="p-4 flex flex-col items-center text-center bg-white"
+              className="p-4 flex flex-col items-center text-center"
             >
               <div className="w-32 h-32 relative mb-4">
                 <Image
@@ -65,7 +65,7 @@ export default function ExecutivesPage() {
                 />
               </div>
               <p className="font-semibold text-lg">{exec.name}</p>
-              <p className="text-gray-600">{exec.role}</p>
+              <p className="text-foreground/60">{exec.role}</p>
             </div>
           ))}
         </div>
