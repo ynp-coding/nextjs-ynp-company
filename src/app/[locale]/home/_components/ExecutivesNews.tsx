@@ -137,6 +137,7 @@ export default function ExecutivesNews() {
           as={Link}
           href="/news/executive"
           aria-labelledby="see-all-executive-news"
+          className="text-sm"
         >
           <span id="see-all-executive-news">ดูทั้งหมด</span>
         </Button>

@@ -101,6 +101,7 @@ export default function PublicRelations() {
             variant="flat"
             aria-labelledby="ดูข่าวประชาสัมพันธ์ทั้งหมด"
             href="#"
+            className="text-sm"
           >
             ดูทั้งหมด
           </Button>

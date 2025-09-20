@@ -81,6 +81,7 @@ export default function EventsCalendar() {
           color="primary"
           variant="flat"
           aria-labelledby="ดูปฏิทินกิจกรรมทั้งหมด"
+          className="text-sm"
         >
           ดูทั้งหมด
         </Button>
