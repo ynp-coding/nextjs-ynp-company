@@ -81,11 +81,11 @@ export default function Header() {
             height={100}
             alt="Logo"
             priority
-            className="rounded-full h-10 w-10 sm:h-18 sm:w-18"
+            className="rounded-full h-12 w-12 sm:h-18 sm:w-18"
           />
           <div className="ml-2">
-            <p className="font-bold sm:text-2xl">YNP Company</p>
-            <span className="sm:text-lg">Department of YNP Company</span>
+            <h1 className="font-bold sm:text-2xl">YNP Company</h1>
+            <span>Department of YNP Company</span>
           </div>
         </NavbarBrand>
 
