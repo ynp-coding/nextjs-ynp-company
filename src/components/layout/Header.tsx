@@ -53,7 +53,7 @@ export default function Header() {
 
   const changeLocale = (key: string) => {
     setLanguage(key as "th" | "en");
-    router.push(pathname, { locale: key });
+    router.replace(pathname, { locale: key });
   };
 
   // Social links
