@@ -40,11 +40,11 @@ const relatedLinks: RelatedLink[] = [
 
 export default function RelatedLinks() {
   return (
-    <section className="bg-gray-50">
+    <section className="bg-gray-50 dark:bg-background contrast:bg-background">
       <div className="container mx-auto px-8 py-8 sm:px-0 md:px-0">
         <div className="flex items-center justify-between mb-8">
           <div>
-            <h2 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
+            <h2 className="text-2xl font-bold flex items-center gap-2">
               <Building2 className="w-6 h-6 text-primary" />
               หน่วยงานที่เกี่ยวข้อง
             </h2>

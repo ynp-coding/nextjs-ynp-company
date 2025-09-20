@@ -117,14 +117,16 @@ export default function ExecutivesNews() {
     <section className="container mx-auto px-8 sm:px-0 md:px-0">
       <div className="flex items-center justify-between mb-8">
         <div>
-          <h2 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
+          <h2 className="text-2xl font-bold flex items-center gap-2">
             <Newspaper
               className="w-6 h-6 text-primary"
               aria-label="ข่าวผู้บริหาร"
             />
             ข่าวผู้บริหาร
           </h2>
-          <p className="text-gray-500 text-sm">ติดตามข่าวผู้บริหารล่าสุด</p>
+          <p className="text-foreground/60 text-sm">
+            ติดตามข่าวผู้บริหารล่าสุด
+          </p>
         </div>
         <Button
           endContent={

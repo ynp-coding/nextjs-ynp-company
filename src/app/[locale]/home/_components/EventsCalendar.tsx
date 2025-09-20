@@ -68,7 +68,7 @@ export default function EventsCalendar() {
             />
             ปฏิทินกิจกรรม
           </h2>
-          <p className="text-gray-500 text-sm">
+          <p className="text-foreground/60 text-sm">
             ติดตามกิจกรรมที่กำลังจะเกิดขึ้น
           </p>
         </div>

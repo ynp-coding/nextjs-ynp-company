@@ -76,7 +76,7 @@ export default function PublicRelations() {
   const firstRow = newsList.slice(0, 5);
 
   return (
-    <section className="bg-gray-50 dark:bg-black">
+    <section className="bg-gray-50 dark:bg-background contrast:bg-background">
       <div className="container mx-auto px-8 py-8 sm:px-0 md:px-0">
         {/* หัวข้อ Section */}
         <div className="flex items-center justify-between mb-8">
@@ -88,7 +88,7 @@ export default function PublicRelations() {
               />
               ข่าวประชาสัมพันธ์
             </h2>
-            <p className="text-sm">
+            <p className="text-foreground/60 text-sm">
               ติดตามข่าวประชาสัมพันธ์ล่าสุดจากกรม/องค์กร
             </p>
           </div>

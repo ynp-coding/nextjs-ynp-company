@@ -7,7 +7,15 @@
 
 /* Root variable สำหรับ font-size */
 :root {
-  --font-size-base: 16px; /* default */
+  --font-size-base: 16px;
+}
+
+html.contrast .contrast\:bg-background {
+  background-color: var(--heroui-background);
+}
+
+html.contrast .contrast\:text-foreground {
+  color: var(--heroui-foreground);
 }
 
 /* ฟอนต์สำหรับข้อความทั้งหมด */
