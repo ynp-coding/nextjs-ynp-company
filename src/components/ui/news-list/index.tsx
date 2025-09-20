@@ -27,15 +27,15 @@ export default function NewsList({ items }: NewsListProps) {
           <div>
             <Link
               href={news.href}
-              className="text-base font-medium text-gray-800 hover:text-primary transition"
+              className="text-base font-medium hover:text-primary transition"
             >
               {news.title}
             </Link>
-            <div className="flex items-center gap-4 text-xs text-gray-500 mt-1">
-              <span className="flex items-center gap-1">
+            <div className="flex items-center gap-4 text-foreground/60 mt-1">
+              <span className="flex items-center gap-1 text-xs">
                 <CalendarDays size={14} /> {news.date}
               </span>
-              <span className="flex items-center gap-1">
+              <span className="flex items-center gap-1 text-xs">
                 <Eye size={14} /> {news.views.toLocaleString()} ครั้ง
               </span>
             </div>
@@ -49,6 +49,7 @@ export default function NewsList({ items }: NewsListProps) {
             color="primary"
             variant="flat"
             aria-labelledby="อ่านต่อ"
+            className="text-xs"
           >
             อ่านต่อ
           </Button>
